@@ -48,7 +48,7 @@ module.exports = (root, options, layoutAlgrithm) => {
     // combine left and right trees
     right.translate(left.x - right.x, left.y - right.y);
     // translate root
-    root.x = left.x;
+    root.x = left.x - root.hgap / 2 + left.hgap / 2;
     root.y = right.y;
     const bb = root.getBoundingBox();
     if (options.isHorizontal) {

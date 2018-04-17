@@ -34,9 +34,9 @@ class Node {
     /*
      * Gaps: filling space between nodes
      * (x, y) ----------------------
-     * |            hgap            |
+     * |            vgap            |
      * |    --------------------    h
-     * | v |                    |   e
+     * | h |                    |   e
      * | g |                    |   i
      * | a |                    |   g
      * | p |                    |   h
