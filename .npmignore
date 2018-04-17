@@ -60,11 +60,10 @@ typings/
 # dotenv environment variables file
 .env
 
-build
-dist
+# build
+demos
 temp
+test
+webpack-dev.config.js
+webpack.config.js
 .DS_Store
-.idea
-demos/assets/screenshots
-lib
-
