@@ -58,22 +58,6 @@ class Node {
     me.height = (options.getHeight || DEFAULT_OPTIONS.getHeight)(data);
     me.id = (options.getId || DEFAULT_OPTIONS.getId)(data);
     me.x = me.y = 0;
-    /*
-     * Anchors: points that edges linked to
-     * (0, 0) --------> (0, 1)
-     *   |                |
-     *   |   (0.5, 0.5)   |
-     *   |                |
-     * (0, 1) --------> (1, 1)
-     */
-    me.inAnchor = {
-      x: 0,
-      y: 0.5
-    };
-    me.outAnchor = {
-      x: 1,
-      y: 0.5
-    };
     me.depth = 0;
     if (!isolated && !data.isCollapsed) {
       const nodes = [ me ];
@@ -207,16 +191,6 @@ class Node {
   getActualHeight() {
     const me = this;
     return me.height - me.vgap * 2;
-  }
-
-  getAnchorPoint(anchor) {
-    const me = this;
-    const width = me.getActualWidth();
-    const height = me.getActualHeight();
-    return {
-      x: me.x + me.hgap + width * anchor.x,
-      y: me.y + me.vgap + height * anchor.y
-    };
   }
 }
 
