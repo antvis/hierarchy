@@ -59,11 +59,11 @@ class Node {
     me.id = (options.getId || DEFAULT_OPTIONS.getId)(data);
     me.x = me.y = 0;
     me.depth = 0;
-    if (!isolated && !data.isCollapsed) {
+    if (!isolated && !data.collapsed) {
       const nodes = [ me ];
       let node = nodes.pop();
       while (node) {
-        if (!node.data.isCollapsed) {
+        if (!node.data.collapsed) {
           const children = (options.getChildren || DEFAULT_OPTIONS.getChildren)(node.data);
           const length = children ? children.length : 0;
           node.children = [];
