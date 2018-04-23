@@ -5,6 +5,7 @@
   "globals": {
     "$": true,
     "DataSet": true,
+    "Hierarchy": true,
     "G2": true
   },
   "parser": "babel-eslint",

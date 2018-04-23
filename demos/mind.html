@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="geometry" content="area-basic">
+  <link rel="stylesheet" href="./assets/common.css">
+  <title>Area Plot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    html, body, .container {
+      text-align: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    canvas {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <canvas id="canvas"></canvas>
+  </div>
+  <script src="./assets/jquery-3.2.1.min.js"></script>
+  <script src="../build/hierarchy.js"></script>
+  <script>
+    /* eslint-disable no-console */
+    function randomInt(n) {
+      return Math.round(Math.random() * n);
+    }
+    function randomColor() {
+      return `rgba(${randomInt(255)}, ${randomInt(255)}, ${randomInt(255)}, ${Math.random()})`;
+    }
+
+    const LINE_COLOR = '#999';
+    function drawLink(n, c, ctx, scale = 1) {
+      let beginNode = n;
+      let endNode = c;
+      if (n.x > c.x) {
+        beginNode = c;
+        endNode = n;
+      }
+      let beginX = Math.round(beginNode.x + beginNode.width - beginNode.hgap);
+      let beginY = Math.round(beginNode.y + beginNode.height / 2);
+      let endX = Math.round(endNode.x + endNode.hgap);
+      let endY = Math.round(endNode.y + endNode.height / 2);
+      if (beginNode.isRoot()) {
+        beginX = Math.round(beginNode.x + beginNode.width / 2);
+        beginY = Math.round(beginNode.y + beginNode.height / 2);
+      }
+      if (endNode.isRoot()) {
+        endX = Math.round(endNode.x + endNode.width / 2);
+        endY = Math.round(endNode.y + endNode.height / 2);
+      }
+      ctx.strokeStyle = LINE_COLOR;
+      ctx.beginPath();
+      ctx.moveTo(beginX / scale, beginY / scale);
+      ctx.bezierCurveTo(
+        Math.round(beginX + (beginNode.hgap + endNode.hgap) / 2) / scale, beginY / scale,
+        Math.round(endX - (beginNode.hgap + endNode.hgap) / 2) / scale, endY / scale,
+        endX / scale, endY / scale
+      );
+      ctx.stroke();
+    }
+
+    const PEM = 18;
+    function drawNode(node, ctx, scale = 1) {
+      const origin = node.data;
+      const color = randomColor();
+      const x = Math.round(node.x + node.hgap);
+      const y = Math.round(node.y + node.vgap);
+      const width = Math.round(node.width - node.hgap * 2);
+      const height = Math.round(node.height - node.vgap * 2);
+      // node
+      ctx.clearRect(x / scale, y / scale, width / scale, height / scale);
+      ctx.fillStyle = color;
+      ctx.fillRect(x / scale, y / scale, width / scale, height / scale);
+      ctx.strokeStyle = '#666';
+      ctx.strokeRect(x / scale, y / scale, width / scale, height / scale);
+      // text
+      if (origin.isRoot) {
+        ctx.font = `${PEM * 2 / scale}px Courier, monospace`;
+      } else {
+        ctx.font = `${PEM / scale}px Courier, monospace`;
+      }
+      ctx.fillStyle = '#666';
+      ctx.fillText(origin.label, (x + PEM * 0.8) / scale, (y + (origin.isRoot ? PEM * 2 : PEM * 1)) / scale);
+    }
+
+    const canvas = document.getElementById('canvas');
+    const containerNode = document.getElementById('container');
+    const ctx = canvas.getContext('2d');
+
+    function setCanvasSize() {
+      canvas.width = containerNode.offsetWidth;
+      canvas.height = containerNode.offsetHeight;
+    }
+
+    $.getJSON('./data/mind.json', root => {
+      Object.assign(root, {
+        isRoot: true
+      });
+      console.time('layout');
+      const rootHeight = PEM * 2.4;
+      const nodeHeight = PEM * 1.2;
+      const rootNode = Hierarchy.compactBox(root, {
+        getHeight(d) {
+          if (d.isRoot) {
+            return rootHeight;
+          }
+          return nodeHeight;
+        },
+        getWidth(d) {
+          if (d.isRoot) {
+            return 200;
+            // return ctx.measureText(d.label).width * 2 + PEM * 1.6;
+          }
+          return 100;
+          // return ctx.measureText(d.label).width + PEM * 1.6;
+        },
+        getHGap(d) {
+          if (d.isRoot) {
+            return rootHeight;
+          }
+          return nodeHeight;
+        },
+        getVGap(d) {
+          if (d.isRoot) {
+            return rootHeight;
+          }
+          return nodeHeight;
+        }
+      });
+      console.timeEnd('layout');
+      console.time('render');
+      setCanvasSize();
+      console.log(rootNode);
+      const bb = rootNode.getBoundingBox();
+      rootNode.translate(0 - bb.left, 0 - bb.top);
+      const scale = Math.min(bb.width / canvas.width, bb.height / canvas.height);
+      canvas.width = bb.width / scale;
+      canvas.height = bb.height / scale;
+
+      if (ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        rootNode.eachNode(node => {
+          node.children.forEach(child => {
+            drawLink(node, child, ctx, scale);
+          });
+          drawNode(node, ctx, scale);
+        });
+      }
+      console.timeEnd('render');
+    });
+  </script>
+</body>
+
+</html>

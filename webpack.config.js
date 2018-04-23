@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    library: 'Herarchy',
+    library: 'Hierarchy',
     libraryTarget: 'umd',
     path: resolve(__dirname, 'build/')
   },

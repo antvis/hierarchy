@@ -1,11 +1,11 @@
 
-const Node = require('./node');
+const hierarchy = require('./hierarchy');
 
 class Layout {
   constructor(root, options = {}) {
     const me = this;
     me.options = options;
-    me.rootNode = new Node(root, options);
+    me.rootNode = hierarchy(root, options);
   }
 
   execute() {
