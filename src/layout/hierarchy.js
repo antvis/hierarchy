@@ -1,4 +1,4 @@
-
+/* eslint-disable no-cond-assign */
 const PEM = 18;
 const DEFAULT_HEIGHT = PEM * 2;
 const DEFAULT_GAP = PEM;
@@ -77,11 +77,10 @@ Object.assign(Node.prototype, {
   eachNode(callback) { // Depth First traverse
     const me = this;
     let nodes = [ me ];
-    let current = nodes.pop();
-    while (current) {
+    let current;
+    while (current = nodes.pop()) {
       callback(current);
       nodes = nodes.concat(current.children);
-      current = nodes.pop();
     }
   },
 
@@ -92,11 +91,10 @@ Object.assign(Node.prototype, {
   BFTraverse(callback) { // Breadth First traverse
     const me = this;
     let nodes = [ me ];
-    let current = nodes.shift();
-    while (current) {
+    let current;
+    while (current = nodes.shift()) {
       callback(current);
       nodes = nodes.concat(current.children);
-      current = nodes.shift();
     }
   },
 
@@ -145,28 +143,28 @@ Object.assign(Node.prototype, {
   }
 });
 
-function hierarchy(data, options = {}) {
+function hierarchy(data, options = {}, isolated) {
   options = Object.assign({}, DEFAULT_OPTIONS, options);
   const root = new Node(data, options);
   const nodes = [ root ];
   let node;
-  /* eslint-disable no-cond-assign */
-  while (node = nodes.pop()) {
-    if (!node.data.collapsed) {
-      const children = options.getChildren(node.data);
-      const length = children ? children.length : 0;
-      node.children = new Array(length);
-      if (children && length) {
-        for (let i = 0; i < length; i++) {
-          const child = new Node(children[i], options);
-          node.children[i] = child;
-          nodes.push(child);
-          child.parent = node;
-          child.depth = node.depth + 1;
+  if (!isolated && !data.collapsed) {
+    while (node = nodes.pop()) {
+      if (!node.data.collapsed) {
+        const children = options.getChildren(node.data);
+        const length = children ? children.length : 0;
+        node.children = new Array(length);
+        if (children && length) {
+          for (let i = 0; i < length; i++) {
+            const child = new Node(children[i], options);
+            node.children[i] = child;
+            nodes.push(child);
+            child.parent = node;
+            child.depth = node.depth + 1;
+          }
         }
       }
     }
-
   }
   return root;
 }

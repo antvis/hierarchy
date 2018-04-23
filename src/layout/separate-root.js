@@ -2,8 +2,8 @@ const hierarchy = require('./hierarchy');
 
 module.exports = (root, options) => {
   // separate into left and right trees
-  const left = hierarchy(root.data, options); // root only
-  const right = hierarchy(root.data, options); // root only
+  const left = hierarchy(root.data, options, true); // root only
+  const right = hierarchy(root.data, options, true); // root only
   // automatically
   const treeSize = root.children.length;
   const rightTreeSize = Math.round(treeSize / 2);
