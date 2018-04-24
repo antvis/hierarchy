@@ -99,6 +99,7 @@ Object.assign(Node.prototype, {
   },
 
   getBoundingBox() {
+    // BBox for just one tree node
     const bb = {
       left: Number.MAX_VALUE,
       top: Number.MAX_VALUE,

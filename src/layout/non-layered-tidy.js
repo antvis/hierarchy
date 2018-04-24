@@ -1,38 +1,37 @@
 // wrap tree node
-class WrappedTree {
-  constructor(w, h, y, c = []) {
-    const me = this;
+function WrappedTree(w, h, y, c = []) {
+  const me = this;
     // size
-    me.w = w || 0;
-    me.h = h || 0;
+  me.w = w || 0;
+  me.h = h || 0;
 
     // position
-    me.y = y || 0;
-    me.x = 0;
+  me.y = y || 0;
+  me.x = 0;
 
     // children
-    me.c = c || [];
-    me.cs = c.length;
+  me.c = c || [];
+  me.cs = c.length;
 
     // modified
-    me.prelim = 0;
-    me.mod = 0;
-    me.shift = 0;
-    me.change = 0;
+  me.prelim = 0;
+  me.mod = 0;
+  me.shift = 0;
+  me.change = 0;
 
     // left/right tree
-    me.tl = null;
-    me.tr = null;
+  me.tl = null;
+  me.tr = null;
 
     // extreme left/right tree
-    me.el = null;
-    me.er = null;
+  me.el = null;
+  me.er = null;
 
     // modified left/right tree
-    me.msel = 0;
-    me.mser = 0;
-  }
+  me.msel = 0;
+  me.mser = 0;
 }
+
 WrappedTree.fromNode = (root, isHorizontal) => {
   if (!root) return null;
   const children = [];

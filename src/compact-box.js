@@ -6,7 +6,6 @@ class CompactBoxTreeLayout extends TreeLayout {
   execute() {
     const me = this;
     const root = doTreeLayout(me.rootNode, me.options, nonLayeredTidyTree);
-    root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
     return root;
   }
 }

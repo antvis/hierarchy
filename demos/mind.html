@@ -114,7 +114,9 @@
       console.time('layout');
       const rootHeight = PEM * 2.4;
       const nodeHeight = PEM * 1.2;
-      const rootNode = Hierarchy.compactBox(root, {
+      // const rootNode = Hierarchy.compactBox(root, {
+      const rootNode = Hierarchy.mindmap(root, {
+        direction: 'H',
         getHeight(d) {
           if (d.isRoot) {
             return rootHeight;
@@ -148,9 +150,9 @@
       console.log(rootNode);
       const bb = rootNode.getBoundingBox();
       rootNode.translate(0 - bb.left, 0 - bb.top);
-      const scale = Math.min(bb.width / canvas.width, bb.height / canvas.height);
+      const scale = Math.max(bb.width / canvas.width, bb.height / canvas.height);
       canvas.width = bb.width / scale;
-      canvas.height = bb.height / scale;
+      // canvas.height = bb.height / scale;
 
       if (ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
