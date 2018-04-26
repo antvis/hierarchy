@@ -25,6 +25,7 @@ module.exports = root => {
   root.parent = null;
   // second walk
   secondWalk(root); // assign sub tree totalHeight
+  // adjusting
   // separating nodes
   root.startY = 0;
   root.y = root.totalHeight / 2;
@@ -34,6 +35,9 @@ module.exports = root => {
     if (len) {
       const first = children[0];
       first.startY = node.startY;
+      if (len === 1) {
+        first.totalHeight = node.totalHeight;
+      }
       first.y = first.startY + first.totalHeight / 2;
       for (let i = 1; i < len; i++) {
         const c = children[i];
