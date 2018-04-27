@@ -28,7 +28,7 @@ module.exports = root => {
   // adjusting
   // separating nodes
   root.startY = 0;
-  root.y = root.totalHeight / 2;
+  root.y = root.totalHeight / 2 - root.height / 2;
   root.eachNode(node => {
     const children = node.children;
     const len = children.length;
@@ -38,11 +38,11 @@ module.exports = root => {
       if (len === 1) {
         first.totalHeight = node.totalHeight;
       }
-      first.y = first.startY + first.totalHeight / 2;
+      first.y = first.startY + first.totalHeight / 2 - first.height / 2;
       for (let i = 1; i < len; i++) {
         const c = children[i];
         c.startY = children[i - 1].startY + children[i - 1].totalHeight;
-        c.y = c.startY + c.totalHeight / 2;
+        c.y = c.startY + c.totalHeight / 2 - c.height / 2;
       }
     }
   });
