@@ -151,9 +151,9 @@
       const bb = rootNode.getBoundingBox();
       rootNode.translate(0 - bb.left, 0 - bb.top);
       // const scale = 1;
-      const scale = Math.max(bb.width / canvas.width, bb.height / canvas.height);
+      const scale = Math.min(bb.width / canvas.width, bb.height / canvas.height);
       canvas.width = bb.width / scale;
-      // canvas.height = bb.height / scale;
+      canvas.height = bb.height / scale;
 
       if (ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);

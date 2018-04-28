@@ -1,13 +1,11 @@
 // wrap tree node
 // TODO considering size
-class WrappedTree {
-  constructor(height, children = []) {
-    const me = this;
-    me.x = me.y = 0;
-    me.leftChild = me.rightChild = null;
-    me.height = height || 0;
-    me.children = children;
-  }
+function WrappedTree(height = 0, children = []) {
+  const me = this;
+  me.x = me.y = 0;
+  me.leftChild = me.rightChild = null;
+  me.height = 0;
+  me.children = children;
 }
 
 const DEFAULT_OPTIONS = {
@@ -65,9 +63,7 @@ module.exports = (root, options = {}) => {
     if (t.isLeaf || t.children.length === 0) {
       t.drawingDepth = maxDepth;
     } else {
-      const depths = t.children.map(child => {
-        return getDrawingDepth(child);
-      });
+      const depths = t.children.map(child => getDrawingDepth(child));
       const minChildDepth = Math.min.apply(null, depths);
       t.drawingDepth = minChildDepth - 1;
     }

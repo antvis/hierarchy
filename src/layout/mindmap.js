@@ -10,6 +10,18 @@ function secondWalk(node) {
   node.totalHeight = Math.max(node.height, totalHeight);
   return node.totalHeight;
 }
+function thirdWalk(node) {
+  const children = node.children;
+  const len = children.length;
+  if (len) {
+    children.forEach(c => {
+      thirdWalk(c);
+    });
+    const first = children[0];
+    const last = children[len - 1];
+    node.y = (first.y + first.height / 2 + last.y + last.height / 2) / 2 - node.height / 2;
+  }
+}
 
 module.exports = root => {
   root.parent = {
@@ -46,4 +58,7 @@ module.exports = root => {
       }
     }
   });
+
+  // third walk
+  thirdWalk(root);
 };
