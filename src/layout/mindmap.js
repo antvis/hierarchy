@@ -1,13 +1,14 @@
 
-function secondWalk(node) {
+function secondWalk(node, options) {
   if (node.isLeaf()) {
     node.totalHeight = node.height;
   }
   let totalHeight = 0;
   node.children.forEach(c => {
-    totalHeight += secondWalk(c);
+    totalHeight += secondWalk(c, options);
   });
-  node.totalHeight = Math.max(node.height, totalHeight);
+  node._subTreeSep = options.getSubTreeSep(node);
+  node.totalHeight = Math.max(node.height, totalHeight) + 2 * node._subTreeSep;
   return node.totalHeight;
 }
 function thirdWalk(node) {
@@ -23,7 +24,14 @@ function thirdWalk(node) {
   }
 }
 
-module.exports = root => {
+const DEFAULT_OPTIONS = {
+  getSubTreeSep() {
+    return 0;
+  }
+};
+
+module.exports = (root, options = {}) => {
+  options = Object.assign({}, DEFAULT_OPTIONS, options);
   root.parent = {
     x: 0,
     width: 0,
@@ -36,25 +44,25 @@ module.exports = root => {
   });
   root.parent = null;
   // second walk
-  secondWalk(root); // assign sub tree totalHeight
+  secondWalk(root, options); // assign sub tree totalHeight
   // adjusting
   // separating nodes
   root.startY = 0;
-  root.y = root.totalHeight / 2 - root.height / 2;
+  root.y = root.totalHeight / 2 - root.height / 2 - root._subTreeSep;
   root.eachNode(node => {
     const children = node.children;
     const len = children.length;
     if (len) {
       const first = children[0];
-      first.startY = node.startY;
+      first.startY = node.startY + node._subTreeSep;
       if (len === 1) {
         first.totalHeight = node.totalHeight;
       }
-      first.y = first.startY + first.totalHeight / 2 - first.height / 2;
+      first.y = first.startY + first.totalHeight / 2 - first.height / 2 - first._subTreeSep;
       for (let i = 1; i < len; i++) {
         const c = children[i];
         c.startY = children[i - 1].startY + children[i - 1].totalHeight;
-        c.y = c.startY + c.totalHeight / 2 - c.height / 2;
+        c.y = c.startY + c.totalHeight / 2 - c.height / 2 - c._subTreeSep;
       }
     }
   });

@@ -1,11 +1,11 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.3.3",
+  "version": "0.3.6",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
   "module": "src/index.js",
-  "homepage": "https://github.com/antvis/hierarchy",
+  "homepage": "https://github.com/antvis/hierarcy",
   "repository": {
     "type": "git",
     "url": "git@github.com:antvis/hierarchy.git"
