@@ -56,11 +56,15 @@ module.exports = (root, options = {}) => {
     if (len) {
       const first = children[0];
       first.startY = node.startY + node._subTreeSep;
-      first.y = first.startY + first.totalHeight / 2 - first.height / 2;
-      for (let i = 1; i < len; i++) {
-        const c = children[i];
-        c.startY = children[i - 1].startY + children[i - 1].totalHeight;
-        c.y = c.startY + c.totalHeight / 2 - c.height / 2;
+      if (len === 1) {
+        first.y = node.y + node.height / 2 - first.height / 2;
+      } else {
+        first.y = first.startY + first.totalHeight / 2 - first.height / 2;
+        for (let i = 1; i < len; i++) {
+          const c = children[i];
+          c.startY = children[i - 1].startY + children[i - 1].totalHeight;
+          c.y = c.startY + c.totalHeight / 2 - c.height / 2;
+        }
       }
     }
   });

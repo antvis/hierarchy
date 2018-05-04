@@ -112,8 +112,9 @@
         isRoot: true
       });
       console.time('layout');
-      const rootHeight = PEM * 2.4;
-      const nodeHeight = PEM * 1.2;
+      const rootHeight = PEM * 4;
+      const subTreeHeight = PEM * 2;
+      const nodeHeight = PEM * 1;
       // const rootNode = Hierarchy.compactBox(root, {
       const rootNode = Hierarchy.mindmap(root, {
         direction: 'H',
@@ -141,6 +142,9 @@
           if (d.isRoot) {
             return rootHeight;
           }
+          if (root.children.indexOf(d) > -1) {
+            return subTreeHeight;
+          }
           return nodeHeight;
         },
         getSubTreeSep(d) {
@@ -157,7 +161,7 @@
       const bb = rootNode.getBoundingBox();
       rootNode.translate(0 - bb.left, 0 - bb.top);
       // const scale = 1;
-      const scale = Math.min(bb.width / canvas.width, bb.height / canvas.height);
+      const scale = Math.max(bb.width / canvas.width, bb.height / canvas.height);
       canvas.width = bb.width / scale;
       canvas.height = bb.height / scale;
 

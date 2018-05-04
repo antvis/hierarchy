@@ -11,6 +11,12 @@
       "label": "First Class",
       "shape": "mind-first-sub",
       "side": "right",
+      "children": [
+        {
+          "label": "新建节点",
+          "id": "1256798z"
+        }
+      ],
       "id": "a9e636c0"
     },
     {
