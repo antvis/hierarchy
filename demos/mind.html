@@ -143,11 +143,11 @@
           }
           return nodeHeight;
         },
-        getSubTreeSep(node) {
-          if (!node.isLeaf()) {
-            return 20;
+        getSubTreeSep(d) {
+          if (!d.children || !d.children.length) {
+            return 0;
           }
-          return 0;
+          return 40;
         }
       });
       console.timeEnd('layout');

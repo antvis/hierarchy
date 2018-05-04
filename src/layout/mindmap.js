@@ -1,13 +1,14 @@
 
 function secondWalk(node, options) {
-  if (node.isLeaf()) {
-    node.totalHeight = node.height;
-  }
   let totalHeight = 0;
-  node.children.forEach(c => {
-    totalHeight += secondWalk(c, options);
-  });
-  node._subTreeSep = options.getSubTreeSep(node);
+  if (!node.children.length) {
+    totalHeight = node.height;
+  } else {
+    node.children.forEach(c => {
+      totalHeight += secondWalk(c, options);
+    });
+  }
+  node._subTreeSep = options.getSubTreeSep(node.data);
   node.totalHeight = Math.max(node.height, totalHeight) + 2 * node._subTreeSep;
   return node.totalHeight;
 }
@@ -48,21 +49,18 @@ module.exports = (root, options = {}) => {
   // adjusting
   // separating nodes
   root.startY = 0;
-  root.y = root.totalHeight / 2 - root.height / 2 - root._subTreeSep;
+  root.y = root.totalHeight / 2 - root.height / 2;
   root.eachNode(node => {
     const children = node.children;
     const len = children.length;
     if (len) {
       const first = children[0];
       first.startY = node.startY + node._subTreeSep;
-      if (len === 1) {
-        first.totalHeight = node.totalHeight;
-      }
-      first.y = first.startY + first.totalHeight / 2 - first.height / 2 - first._subTreeSep;
+      first.y = first.startY + first.totalHeight / 2 - first.height / 2;
       for (let i = 1; i < len; i++) {
         const c = children[i];
         c.startY = children[i - 1].startY + children[i - 1].totalHeight;
-        c.y = c.startY + c.totalHeight / 2 - c.height / 2 - c._subTreeSep;
+        c.y = c.startY + c.totalHeight / 2 - c.height / 2;
       }
     }
   });
