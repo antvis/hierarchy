@@ -24,7 +24,7 @@ function thirdWalk(node) {
     const childrenHeight = last.y - first.y + last.height;
     if (childrenHeight > node.height) {
       node.y = first.y + childrenHeight / 2 - node.height / 2;
-    } else {
+    } else if (children.length !== 1) {
       const offset = (node.height - childrenHeight) / 2;
       children.forEach(c => {
         c.translate(0, offset);
