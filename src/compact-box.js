@@ -5,8 +5,7 @@ const doTreeLayout = require('./layout/do-layout');
 class CompactBoxTreeLayout extends TreeLayout {
   execute() {
     const me = this;
-    const root = doTreeLayout(me.rootNode, me.options, nonLayeredTidyTree);
-    return root;
+    return doTreeLayout(me.rootNode, me.options, nonLayeredTidyTree);
   }
 }
 

@@ -5,8 +5,7 @@ const doTreeLayout = require('./layout/do-layout');
 class MindmapLayout extends TreeLayout {
   execute() {
     const me = this;
-    const root = doTreeLayout(me.rootNode, me.options, mindmap);
-    return root;
+    return doTreeLayout(me.rootNode, me.options, mindmap);
   }
 }
 

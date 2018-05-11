@@ -119,6 +119,7 @@
       const rootNode = Hierarchy.mindmap(root, {
         direction: 'H',
         getHeight(d) {
+          if (d.height) return d.height;
           if (d.isRoot) {
             return rootHeight;
           }

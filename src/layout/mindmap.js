@@ -21,7 +21,15 @@ function thirdWalk(node) {
     });
     const first = children[0];
     const last = children[len - 1];
-    node.y = (first.y + first.height / 2 + last.y + last.height / 2) / 2 - node.height / 2;
+    const childrenHeight = last.y - first.y + last.height;
+    if (childrenHeight > node.height) {
+      node.y = first.y + childrenHeight / 2 - node.height / 2;
+    } else {
+      const offset = (node.height - childrenHeight) / 2;
+      children.forEach(c => {
+        c.translate(0, offset);
+      });
+    }
   }
 }
 

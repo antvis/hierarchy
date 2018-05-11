@@ -1,6 +1,6 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
@@ -66,6 +66,7 @@
     "mkdir-dist": "node ./bin/mkdir-dist.js",
     "prepublishOnly": "npm run build-lib && npm run dist",
     "screenshot": "node ./bin/screenshot.js",
+    "start": "npm run dev",
     "test": "torch --renderer --recursive ./test/unit",
     "test-live": "torch --interactive --watch --recursive ./test/unit",
     "watch": "webpack --config webpack-dev.config.js",
