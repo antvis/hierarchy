@@ -29,6 +29,8 @@ function thirdWalk(node) {
       children.forEach(c => {
         c.translate(0, offset);
       });
+    } else {
+      node.y = (first.y + first.height / 2 + last.y + last.height / 2) / 2 - node.height / 2;
     }
   }
 }
