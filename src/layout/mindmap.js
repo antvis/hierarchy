@@ -12,6 +12,7 @@ function secondWalk(node, options) {
   node.totalHeight = Math.max(node.height, totalHeight) + 2 * node._subTreeSep;
   return node.totalHeight;
 }
+
 function thirdWalk(node) {
   const children = node.children;
   const len = children.length;
@@ -22,14 +23,21 @@ function thirdWalk(node) {
     const first = children[0];
     const last = children[len - 1];
     const childrenHeight = last.y - first.y + last.height;
+    let childrenTotalHeight = 0;
+    children.forEach(child => {
+      childrenTotalHeight += child.totalHeight;
+    });
     if (childrenHeight > node.height) {
+      // 当子节点总高度大于父节点高度
       node.y = first.y + childrenHeight / 2 - node.height / 2;
-    } else if (children.length !== 1) {
+    } else if (children.length !== 1 || node.height > childrenTotalHeight) {
+      // 多于一个子节点或者父节点大于所有子节点的总高度
       const offset = (node.height - childrenHeight) / 2;
       children.forEach(c => {
         c.translate(0, offset);
       });
     } else {
+      // 只有一个子节点
       node.y = (first.y + first.height / 2 + last.y + last.height / 2) / 2 - node.height / 2;
     }
   }
