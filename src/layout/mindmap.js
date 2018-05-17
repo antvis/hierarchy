@@ -32,7 +32,7 @@ function thirdWalk(node) {
       node.y = first.y + childrenHeight / 2 - node.height / 2;
     } else if (children.length !== 1 || node.height > childrenTotalHeight) {
       // 多于一个子节点或者父节点大于所有子节点的总高度
-      const offset = (node.height - childrenHeight) / 2;
+      const offset = node.y + (node.height - childrenHeight) / 2 - first.y;
       children.forEach(c => {
         c.translate(0, offset);
       });

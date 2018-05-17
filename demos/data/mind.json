@@ -1,329 +1,571 @@
 {
-  "label": "MindMap",
   "children": [
     {
-      "label": "First Class",
-      "shape": "mind-first-sub",
-      "side": "right",
-      "id": "171f2adf"
-    },
-    {
-      "label": "First Class",
-      "shape": "mind-first-sub",
-      "height": 300,
       "side": "right",
       "children": [
         {
-          "label": "新建节点",
-          "id": "1256798z"
-        },
-        {
-          "label": "新建节点",
-          "id": "1256798hh"
-        }
-      ],
-      "id": "a9e636c0"
-    },
-    {
-      "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "69703647"
-    },
-    {
-      "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "65e3c58c"
-    },
-    {
-      "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "b9fe5519",
-      "children": [
-        {
-          "label": "新建节点",
-          "id": "fb9dad18",
           "children": [
             {
-              "label": "新建节点",
-              "id": "1256798b",
-              "height": 300,
+              "side": "right",
               "children": [
                 {
-                  "label": "新建节点",
-                  "id": "1c7d91b5",
                   "children": [
                     {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "cf19bbec"
-                    },
-                    {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "82b71063"
-                    },
-                    {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "a61dbf47"
-                    },
-                    {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "85750a3d",
                       "children": [
                         {
-                          "label": "新建节点",
-                          "id": "10cc69c0",
-                          "children": [
-                            {
-                              "label": "新建节点",
-                              "id": "89945bf4",
-                              "children": [
-                                {
-                                  "label": "新建节点",
-                                  "id": "04179206",
-                                  "children": [
-                                    {
-                                      "label": "新建节点",
-                                      "id": "b5823106",
-                                      "nth": 0,
-                                      "children": [
-                                        {
-                                          "label": "新建节点",
-                                          "id": "c6bec433",
-                                          "children": [
-                                            {
-                                              "label": "新建节点",
-                                              "nth": 0,
-                                              "id": "9a6d35da"
-                                            },
-                                            {
-                                              "label": "新建节点",
-                                              "nth": 0,
-                                              "id": "86ec78b4"
-                                            },
-                                            {
-                                              "label": "新建节点",
-                                              "nth": 0,
-                                              "id": "76febcad",
-                                              "children": [
-                                                {
-                                                  "label": "新建节点",
-                                                  "nth": 0,
-                                                  "id": "11b210a1"
-                                                },
-                                                {
-                                                  "label": "新建节点",
-                                                  "nth": 0,
-                                                  "id": "8200dd8b",
-                                                  "children": [
-                                                    {
-                                                      "label": "新建节点",
-                                                      "id": "d472795a",
-                                                      "children": [
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "5177dc22"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "2da61a45"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "71f94c9d"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "e988c5ed"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "2b7c3604"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "fd3be57e",
-                                                          "children": [
-                                                            {
-                                                              "label": "新建节点",
-                                                              "id": "51188c53",
-                                                              "children": [
-                                                                {
-                                                                  "label": "新建节点",
-                                                                  "id": "66c3ab76",
-                                                                  "children": [
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "nth": 0,
-                                                                      "id": "9feae7ed"
-                                                                    },
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "nth": 0,
-                                                                      "id": "3ec5dc91"
-                                                                    },
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "nth": 0,
-                                                                      "id": "75ec48de",
-                                                                      "children": [
-                                                                        {
-                                                                          "label": "新建节点",
-                                                                          "id": "e267e77b",
-                                                                          "children": [
-                                                                            {
-                                                                              "label": "新建节点",
-                                                                              "id": "db1bf4a1",
-                                                                              "children": [
-                                                                                {
-                                                                                  "label": "新建节点",
-                                                                                  "id": "b592c5ba"
-                                                                                }
-                                                                              ]
-                                                                            }
-                                                                          ]
-                                                                        }
-                                                                      ]
-                                                                    },
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "nth": 0,
-                                                                      "id": "c1516265"
-                                                                    },
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "nth": 0,
-                                                                      "id": "5f373d42"
-                                                                    },
-                                                                    {
-                                                                      "label": "新建节点",
-                                                                      "id": "c9349e31"
-                                                                    }
-                                                                  ]
-                                                                }
-                                                              ]
-                                                            }
-                                                          ]
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "67a06ede"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "229510e0"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "9fcc1f8d"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "nth": 0,
-                                                          "id": "fd883d58"
-                                                        },
-                                                        {
-                                                          "label": "新建节点",
-                                                          "id": "6398d140"
-                                                        }
-                                                      ]
-                                                    }
-                                                  ]
-                                                },
-                                                {
-                                                  "label": "新建节点",
-                                                  "id": "f3986732"
-                                                }
-                                              ]
-                                            },
-                                            {
-                                              "label": "新建节点",
-                                              "nth": 0,
-                                              "id": "6f5fd890"
-                                            },
-                                            {
-                                              "label": "新建节点",
-                                              "id": "128fc306"
-                                            }
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
+                          "side": "right",
+                          "width": 67,
+                          "height": 23
+                        },
+                        {
+                          "side": "right",
+                          "width": 67,
+                          "height": 23
                         }
-                      ]
-                    },
-                    {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "5c507e34"
-                    },
-                    {
-                      "label": "新建节点",
-                      "nth": 0,
-                      "id": "3cbc94f4"
-                    },
-                    {
-                      "label": "新建节点",
-                      "id": "51176bac"
+                      ],
+                      "side": "right",
+                      "width": 67,
+                      "height": 23
                     }
-                  ]
+                  ],
+                  "side": "right",
+                  "width": 67,
+                  "height": 23
                 }
-              ]
+              ],
+              "width": 43,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 43,
+              "height": 23
             }
-          ]
+          ],
+          "side": "right",
+          "width": 59,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 103,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 103,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 103,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 59,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 175,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 115,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 91,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 59,
+          "height": 31
         }
-      ]
+      ],
+      "width": 69,
+      "height": 31
     },
     {
       "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "5b30696e"
+      "children": [
+        {
+          "side": "right",
+          "width": 59,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "side": "right",
+                          "width": 67,
+                          "height": 23
+                        }
+                      ],
+                      "side": "right",
+                      "collapsed": true,
+                      "width": 22.33599853515625,
+                      "height": 23
+                    }
+                  ],
+                  "side": "right",
+                  "width": 67,
+                  "height": 23
+                }
+              ],
+              "width": 103,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 79,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 47,
+          "height": 31
+        }
+      ],
+      "width": 69,
+      "height": 31
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 35,
+          "height": 31
+        },
+        {
+          "side": "right",
+          "children": [
+            {
+              "side": "right",
+              "width": 247,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 139,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 343,
+              "height": 59
+            },
+            {
+              "side": "right",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "side": "right",
+                          "width": 67,
+                          "height": 23
+                        }
+                      ],
+                      "side": "right",
+                      "width": 67,
+                      "height": 23
+                    }
+                  ],
+                  "side": "right",
+                  "width": 67,
+                  "height": 23
+                }
+              ],
+              "width": 343,
+              "height": 131
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "width": 35,
+          "height": 31
+        }
+      ],
+      "side": "right",
+      "width": 55,
+      "height": 31
     },
     {
       "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "ffc5b0e8"
+      "children": [
+        {
+          "side": "right",
+          "width": 83,
+          "height": 31
+        },
+        {
+          "side": "right",
+          "width": 62.55198669433594,
+          "height": 31
+        },
+        {
+          "side": "right",
+          "width": 83,
+          "height": 31
+        }
+      ],
+      "width": 55,
+      "height": 31
     },
     {
       "side": "right",
-      "label": "新建节点",
-      "nth": 2,
-      "shape": "mind-first-sub",
-      "id": "0aa18f5c"
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 59,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
     },
     {
-      "label": "First Class",
-      "shape": "mind-first-sub",
       "side": "right",
-      "id": "44adb1b2"
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 22.33599853515625,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 14.33599853515625,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
+    },
+    {
+      "side": "right",
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "width": 22.33599853515625,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 59,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
+    },
+    {
+      "side": "right",
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "side": "right",
+                      "width": 67,
+                      "height": 23
+                    }
+                  ],
+                  "side": "right",
+                  "width": 67,
+                  "height": 23
+                }
+              ],
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 14.33599853515625,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
+    },
+    {
+      "side": "right",
+      "children": [
+        {
+          "children": [
+            {
+              "side": "right",
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "side": "right",
+                          "width": 22.33599853515625,
+                          "height": 23
+                        }
+                      ],
+                      "side": "right",
+                      "width": 22.33599853515625,
+                      "height": 23
+                    }
+                  ],
+                  "side": "right",
+                  "width": 22.33599853515625,
+                  "height": 23
+                }
+              ],
+              "width": 22.33599853515625,
+              "height": 23
+            }
+          ],
+          "side": "right",
+          "width": 14.33599853515625,
+          "height": 31
+        }
+      ],
+      "width": 30.891998291015625,
+      "height": 31
+    },
+    {
+      "side": "left",
+      "width": 349,
+      "height": 171
+    },
+    {
+      "side": "left",
+      "children": [
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "left",
+          "width": 59,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "left",
+          "width": 59,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "left",
+          "width": 59,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
+    },
+    {
+      "side": "left",
+      "children": [
+        {
+          "side": "left",
+          "children": [
+            {
+              "side": "left",
+              "width": 55,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 55,
+              "height": 23
+            }
+          ],
+          "width": 35,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "collapsed": false,
+          "side": "left",
+          "width": 35,
+          "height": 31
+        }
+      ],
+      "width": 55,
+      "height": 31
+    },
+    {
+      "side": "left",
+      "children": [
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 55,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 55,
+              "height": 23
+            }
+          ],
+          "side": "left",
+          "width": 35,
+          "height": 31
+        },
+        {
+          "children": [
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            },
+            {
+              "side": "left",
+              "width": 67,
+              "height": 23
+            }
+          ],
+          "side": "left",
+          "width": 35,
+          "height": 31
+        }
+      ],
+      "width": 83,
+      "height": 31
     }
   ],
-  "shape": "mind-root",
-  "id": "4237cc03"
+  "width": 130,
+  "height": 46
 }

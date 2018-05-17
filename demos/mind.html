@@ -95,7 +95,7 @@
         ctx.font = `${PEM / scale}px Courier, monospace`;
       }
       ctx.fillStyle = '#666';
-      ctx.fillText(origin.label, (x + PEM * 0.8) / scale, (y + (origin.isRoot ? PEM * 2 : PEM * 1)) / scale);
+      ctx.fillText(origin.label || 'none', (x + PEM * 0.8) / scale, (y + (origin.isRoot ? PEM * 2 : PEM * 1)) / scale);
     }
 
     const canvas = document.getElementById('canvas');
@@ -117,6 +117,9 @@
       const nodeHeight = PEM * 1;
       // const rootNode = Hierarchy.compactBox(root, {
       const rootNode = Hierarchy.mindmap(root, {
+        getSide(d) {
+          return d.data.side || 'right';
+        },
         direction: 'H',
         getHeight(d) {
           if (d.height) return d.height;
@@ -126,6 +129,7 @@
           return nodeHeight;
         },
         getWidth(d) {
+          if (d.width) return d.width;
           if (d.isRoot) {
             return 200;
             // return ctx.measureText(d.label).width * 2 + PEM * 1.6;
@@ -160,11 +164,11 @@
       setCanvasSize();
       console.log(rootNode);
       const bb = rootNode.getBoundingBox();
-      rootNode.translate(0 - bb.left, 0 - bb.top);
+      // rootNode.translate(0 - bb.left / 2, 0 - bb.top / 2);
       // const scale = 1;
       const scale = Math.max(bb.width / canvas.width, bb.height / canvas.height);
-      canvas.width = bb.width / scale;
-      canvas.height = bb.height / scale;
+      // canvas.width = bb.width / scale;
+      // canvas.height = bb.height / scale;
 
       if (ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
