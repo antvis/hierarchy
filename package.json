@@ -1,10 +1,10 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
-  "module": "src/index.js",
+  "module": "lib/index.js",
   "homepage": "https://github.com/antvis/hierarcy",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "author": "https://github.com/orgs/antvis/people",
   "license": "MIT",
   "devDependencies": {
-    "@lite-js/torch": "~0.2.6",
+    "torchjs": "~2.0.4",
     "babel-cli": "~6.26.0",
     "babel-core": "~6.26.0",
     "babel-eslint": "~8.0.3",
@@ -33,7 +33,7 @@
     "connect": "~3.6.5",
     "d3-queue": "~3.0.7",
     "debug": "~3.1.0",
-    "electron": "~1.8.4",
+    "electron": "~2.0.6",
     "eslint": "~3.19.0",
     "eslint-config-airbnb": "~15.0.1",
     "eslint-config-egg": "~4.2.0",
