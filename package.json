@@ -1,6 +1,6 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.3.14",
+  "version": "0.3.15",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
