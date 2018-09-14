@@ -20,13 +20,12 @@
   "author": "https://github.com/orgs/antvis/people",
   "license": "MIT",
   "devDependencies": {
-    "torchjs": "~2.0.4",
-    "babel-cli": "~6.26.0",
-    "babel-core": "~6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "babel-eslint": "~8.0.3",
-    "babel-loader": "~7.1.2",
+    "babel-loader": "^8.0.0",
     "babel-plugin-transform-remove-strict-mode": "~0.0.2",
-    "babel-preset-env": "~1.6.1",
     "chai": "~4.1.2",
     "cheerio": "~1.0.0-rc.2",
     "commander": "~2.12.2",
@@ -46,6 +45,7 @@
     "pre-commit": "~1.2.2",
     "serve-static": "~1.13.1",
     "shelljs": "~0.7.8",
+    "torchjs": "~2.0.4",
     "uglify-js": "~3.1.10",
     "webpack": "~3.10.0"
   },
@@ -79,5 +79,7 @@
     ],
     "silent": false
   },
-  "dependencies": {}
+  "dependencies": {
+    "@antv/util": "^1.2.4"
+  }
 }

@@ -1,4 +1,3 @@
-
 const DEFAULT_INDENT = 20;
 function positionNode(node, previousNode, dx) {
   node.x += dx * node.depth;

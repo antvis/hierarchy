@@ -1,5 +1,7 @@
 // wrap tree node
 // TODO considering size
+const util = require('../util');
+
 function WrappedTree(height = 0, children = []) {
   const me = this;
   me.x = me.y = 0;
@@ -30,7 +32,7 @@ function convertBack(converted/* WrappedTree */, root/* TreeNode */, isHorizonta
 }
 
 module.exports = (root, options = {}) => {
-  options = Object.assign({}, DEFAULT_OPTIONS, options);
+  options = util.assign({}, DEFAULT_OPTIONS, options);
 
   let maxDepth = 0;
   function wrappedTreeFromNode(n) {

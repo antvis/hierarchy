@@ -1,6 +1,8 @@
 const TreeLayout = require('./layout/base');
 const indentedTree = require('./layout/indented');
 const separateTree = require('./layout/separate-root');
+const util = require('./util');
+
 
 const VALID_DIRECTIONS = [
   'LR', // left to right
@@ -43,7 +45,7 @@ const DEFAULT_OPTIONS = {
 };
 
 function indentedLayout(root, options) {
-  options = Object.assign({}, DEFAULT_OPTIONS, options);
+  options = util.assign({}, DEFAULT_OPTIONS, options);
   return new IndentedLayout(root, options).execute();
 }
 

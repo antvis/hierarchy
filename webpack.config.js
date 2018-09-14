@@ -20,18 +20,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            babelrc: false,
-            plugins: [
-              'transform-remove-strict-mode'
-            ],
-            presets: [
-              [
-                'env', {
-                  loose: true,
-                  modules: false
-                }
-              ]
-            ]
+            babelrc: true
           }
         }
       }

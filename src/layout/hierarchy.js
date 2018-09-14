@@ -1,4 +1,6 @@
 /* eslint-disable no-cond-assign */
+const util = require('../util');
+
 const PEM = 18;
 const DEFAULT_HEIGHT = PEM * 2;
 const DEFAULT_GAP = PEM;
@@ -57,7 +59,7 @@ function Node(data, options) {
   return me;
 }
 
-Object.assign(Node.prototype, {
+util.assign(Node.prototype, {
   isRoot() {
     return (this.depth === 0);
   },
@@ -145,7 +147,7 @@ Object.assign(Node.prototype, {
 });
 
 function hierarchy(data, options = {}, isolated) {
-  options = Object.assign({}, DEFAULT_OPTIONS, options);
+  options = util.assign({}, DEFAULT_OPTIONS, options);
   const root = new Node(data, options);
   const nodes = [ root ];
   let node;

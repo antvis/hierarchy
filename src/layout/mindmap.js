@@ -1,3 +1,4 @@
+const util = require('../util');
 
 function secondWalk(node, options) {
   let totalHeight = 0;
@@ -50,7 +51,7 @@ const DEFAULT_OPTIONS = {
 };
 
 module.exports = (root, options = {}) => {
-  options = Object.assign({}, DEFAULT_OPTIONS, options);
+  options = util.assign({}, DEFAULT_OPTIONS, options);
   root.parent = {
     x: 0,
     width: 0,
