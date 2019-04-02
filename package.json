@@ -5,7 +5,7 @@
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
   "module": "lib/index.js",
-  "homepage": "https://github.com/antvis/hierarcy",
+  "homepage": "https://github.com/antvis/hierarchy",
   "repository": {
     "type": "git",
     "url": "git@github.com:antvis/hierarchy.git"
