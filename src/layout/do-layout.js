@@ -61,6 +61,10 @@ module.exports = (root, options, layoutAlgrithm) => {
       }
     }
   }
-  // root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
+  // fixed root position, default value is false
+  const { fixedRoot } = options
+  if (!fixedRoot) {
+    root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
+  }
   return root;
 };
