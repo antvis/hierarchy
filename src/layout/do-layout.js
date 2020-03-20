@@ -61,9 +61,10 @@ module.exports = (root, options, layoutAlgrithm) => {
       }
     }
   }
-  // fixed root position, default value is false
-  const fixedRoot = options.fixedRoot;
-  if (!fixedRoot) {
+  // fixed root position, default value is true
+  let fixedRoot = options.fixedRoot;
+  if (fixedRoot === undefined) fixedRoot = true;
+  if (fixedRoot) {
     root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
   }
   return root;
