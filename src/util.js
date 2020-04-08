@@ -1,5 +1,4 @@
-const assign = require('@antv/util/lib/mix');
-
+const { mix } = require('@antv/util');
 module.exports = {
-  assign
+  assign: mix
 };
