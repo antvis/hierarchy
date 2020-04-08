@@ -22,8 +22,8 @@ const DEFAULT_OPTIONS = {
     return d.height || DEFAULT_HEIGHT;
   },
   getWidth(d) {
-    const name = d.name || ' ';
-    return d.width || (name.split('').length * PEM); // FIXME DO NOT get width like this
+    const label = d.label || ' ';
+    return d.width || (label.split('').length * PEM); // FIXME DO NOT get width like this
   }
 };
 
