@@ -80,7 +80,7 @@ util.assign(Node.prototype, {
     const me = this;
     let nodes = [ me ];
     let current;
-    while (current = nodes.pop()) {
+    while (current = nodes.shift()) {
       callback(current);
       nodes = nodes.concat(current.children);
     }
@@ -152,7 +152,7 @@ function hierarchy(data, options = {}, isolated) {
   const nodes = [ root ];
   let node;
   if (!isolated && !data.collapsed) {
-    while (node = nodes.pop()) {
+    while (node = nodes.shift()) {
       if (!node.data.collapsed) {
         const children = options.getChildren(node.data);
         const length = children ? children.length : 0;
