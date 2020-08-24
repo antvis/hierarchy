@@ -82,7 +82,7 @@ util.assign(Node.prototype, {
     let current;
     while (current = nodes.shift()) {
       callback(current);
-      nodes = nodes.concat(current.children);
+      nodes = current.children.concat(nodes);
     }
   },
 
