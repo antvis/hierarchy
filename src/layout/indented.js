@@ -1,7 +1,7 @@
 function positionNode(node, previousNode, dx, dropCap) {
   if (!dropCap) {
     try {
-      if (node.id === node.parent.children[node.parent.children.length - 1].id) {
+      if (node.id === node.parent.children[0].id) {
         node.x += dx * node.depth;
         node.y = previousNode ? previousNode.y : 0;
         return;
