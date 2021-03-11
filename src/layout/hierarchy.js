@@ -9,6 +9,12 @@ const DEFAULT_OPTIONS = {
   getId(d) {
     return d.id || d.name;
   },
+  getPreH(d) {
+    return d.preH || 0;
+  },
+  getPreV(d) {
+    return d.preV || 0;
+  },
   getHGap(d) {
     return d.hgap || DEFAULT_GAP;
   },
@@ -47,8 +53,12 @@ function Node(data, options) {
    */
   const hgap = options.getHGap(data);
   const vgap = options.getVGap(data);
+  me.preH = options.getPreH(data);
+  me.preV = options.getPreV(data);
   me.width = options.getWidth(data);
   me.height = options.getHeight(data);
+  me.width += me.preH;
+  me.height += me.preV;
   me.id = options.getId(data);
   me.x = me.y = 0;
   me.depth = 0;
@@ -122,6 +132,8 @@ util.assign(Node.prototype, {
     this.eachNode(node => {
       node.x += tx;
       node.y += ty;
+      node.x += node.preH;
+      node.y += node.preV;
     });
   },
 
