@@ -1,11 +1,11 @@
-function positionNode(node, previousNode, dx, dropCap) {
+function positionNode(node, previousNode, indent, dropCap) {
   //  caculate the node's horizontal offset DX, dx's type might be number or function
-  const DX = typeof dx === 'function' ? dx(node) : dx * node.depth;
+  const displacementX = typeof indent === 'function' ? indent(node) : indent * node.depth;
 
   if (!dropCap) {
     try {
       if (node.id === node.parent.children[0].id) {
-        node.x += DX;
+        node.x += displacementX;
         node.y = previousNode ? previousNode.y : 0;
         return;
       }
@@ -14,7 +14,7 @@ function positionNode(node, previousNode, dx, dropCap) {
     }
   }
 
-  node.x += DX;
+  node.x += displacementX;
   node.y = previousNode ? previousNode.y + previousNode.height : 0;
   return;
 }
