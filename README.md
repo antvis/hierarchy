@@ -1,6 +1,14 @@
-# hierarchy
+<h1 align="center">
+<b>@antv/hierarchy</b>
+</h1>
 
-layout algorithms for visualizing hierarchical data.
+> Layout algorithms for visualizing hierarchical data.
+
+[![Build Status](https://github.com/antvis/hierarchy/actions/workflows/build.yml/badge.svg)](https://github.com/antvis/hierarchy/actions)
+[![npm Version](https://img.shields.io/npm/v/@antv/hierarchy.svg)](https://www.npmjs.com/package/@antv/hierarchy)
+[![npm Download](https://img.shields.io/npm/dm/@antv/hierarchy.svg)](https://www.npmjs.com/package/@antv/hierarchy)
+[![npm License](https://img.shields.io/npm/l/@antv/hierarchy.svg)](https://www.npmjs.com/package/@antv/hierarchy)
+
 
 ## API
 
