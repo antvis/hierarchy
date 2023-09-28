@@ -30,8 +30,3 @@ jobs:
         run: |
           npm install
           npm run ci
-      - name: coverall
-        if: success()
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
