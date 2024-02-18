@@ -93,6 +93,7 @@ function layer(node, isHorizontal, d = 0) {
 
 module.exports = (root, options = {}) => {
   const isHorizontal = options.isHorizontal;
+  const forceCompact = options.forceCompact;
   function firstWalk(t) {
     if (t.cs === 0) {
       setExtremes(t);
@@ -103,7 +104,7 @@ module.exports = (root, options = {}) => {
     for (let i = 1; i < t.cs; ++i) {
       firstWalk(t.c[i]);
       const min = bottom(t.c[i].er);
-      separate(t, i, ih);
+      separate(t, i, ih, forceCompact);
       ih = updateIYL(min, i, ih);
     }
     positionRoot(t);
@@ -123,7 +124,7 @@ module.exports = (root, options = {}) => {
     }
   }
 
-  function separate(t, i, ih) {
+  function separate(t, i, ih, forceCompact) {
     let sr = t.c[i - 1];
     let mssr = sr.mod;
     let cl = t.c[i];
@@ -131,7 +132,8 @@ module.exports = (root, options = {}) => {
     while (sr !== null && cl !== null) {
       if (bottom(sr) > ih.low) ih = ih.nxt;
       const dist = (mssr + sr.prelim + sr.w) - (mscl + cl.prelim);
-      if (dist > 0) {
+      // if forceCompact, the moveSubTree method is executed no matter what
+      if (forceCompact || dist > 0) {
         mscl += dist;
         moveSubtree(t, i, ih.index, dist);
       }
