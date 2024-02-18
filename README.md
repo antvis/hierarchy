@@ -44,7 +44,8 @@ const NODE_SIZE = 16;
 const PEM = 5;
 const ctx = document.getElementById('id-of-canvas-element').getContext('2d');
 const rootNode = Hierarchy.compactBox(root, {
-  direction: 'H', // H / V / LR / RL / TB / BT
+  direction: 'H', // H / V / LR / RL / TB / BT,
+  forceCompact: true, // 开启强制紧凑，节点会以最小宽度和最小高度排列，不论节点在布局过程中是否重叠都会执行子树移动的行为
   getId(d) {
     return d.id;
   },
