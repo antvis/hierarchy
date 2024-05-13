@@ -1,6 +1,6 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
@@ -34,7 +34,6 @@
     "silent": false
   },
   "dependencies": {
-    "@antv/util": "^2.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

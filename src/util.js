@@ -1,5 +1,3 @@
-const { mix } = require('@antv/util');
-
 /**
  * Get average height or height for node's position calculation, according to align.
  * @param {*} preNode previous node
@@ -13,6 +11,6 @@ function getHeight(preNode, node, align, heightField = 'height') {
 }
 
 module.exports = {
-  assign: mix,
+  assign: Object.assign,
   getHeight
 };
