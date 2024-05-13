@@ -13,6 +13,6 @@ function getHeight(preNode, node, align, heightField = 'height') {
 }
 
 module.exports = {
-  assign: mix,
+  assign: Object.assign,
   getHeight
 };

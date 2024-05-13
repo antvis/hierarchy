@@ -34,7 +34,6 @@
     "silent": false
   },
   "dependencies": {
-    "@antv/util": "^2.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
