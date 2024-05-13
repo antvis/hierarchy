@@ -1,5 +1,3 @@
-const { mix } = require('@antv/util');
-
 /**
  * Get average height or height for node's position calculation, according to align.
  * @param {*} preNode previous node
