@@ -67,7 +67,6 @@ module.exports = (root, options, layoutAlgrithm) => {
     root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
   }
 
- 
   reassignXYIfRadial(root, options);
 
   return root;
@@ -76,7 +75,7 @@ module.exports = (root, options, layoutAlgrithm) => {
 
 function reassignXYIfRadial(root, options) {
   if (options.radial) {
-    const [rScale, radScale] = options.isHorizontal ? ["x", "y"] : ["y", "x"];
+    const [ rScale, radScale ] = options.isHorizontal ? [ "x", "y" ] : [ "y", "x" ];
 
     const min = { x: Infinity, y: Infinity };
     const max = { x: -Infinity, y: -Infinity };
