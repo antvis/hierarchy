@@ -69,7 +69,7 @@ module.exports = (root, options, layoutAlgrithm) => {
   }
 
   if (options.radial) {
-    const [rScale, radScale] = options.isHorizontal ? ["x", "y"] : ["y", "x"];
+    const [ rScale, radScale ] = options.isHorizontal ? [ "x", "y" ] : [ "y", "x" ];
 
     const min = { x: Infinity, y: Infinity };
     const max = { x: -Infinity, y: -Infinity };
