@@ -1,4 +1,3 @@
-
 const separateTree = require('./separate-root');
 const VALID_DIRECTIONS = [
   'LR', // left to right
@@ -67,5 +66,41 @@ module.exports = (root, options, layoutAlgrithm) => {
   if (fixedRoot) {
     root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
   }
+
+  reassignXYIfRadial(root, options);
+
   return root;
 };
+
+
+function reassignXYIfRadial(root, options) {
+  if (options.radial) {
+    const [ rScale, radScale ] = options.isHorizontal ? [ "x", "y" ] : [ "y", "x" ];
+
+    const min = { x: Infinity, y: Infinity };
+    const max = { x: -Infinity, y: -Infinity };
+
+    let count = 0;
+    root.DFTraverse((node) => {
+      count++;
+      const { x, y } = node;
+      min.x = Math.min(min.x, x);
+      min.y = Math.min(min.y, y);
+      max.x = Math.max(max.x, x);
+      max.y = Math.max(max.y, y);
+    });
+
+    const radDiff = max[radScale] - min[radScale];
+    if (radDiff === 0) return;
+
+    const avgRad = (Math.PI * 2) / count;
+    root.DFTraverse((node) => {
+      const rad =
+        ((node[radScale] - min[radScale]) / radDiff) * (Math.PI * 2 - avgRad) +
+        avgRad;
+      const r = node[rScale] - root[rScale];
+      node.x = Math.cos(rad) * r;
+      node.y = Math.sin(rad) * r;
+    });
+  }
+}
