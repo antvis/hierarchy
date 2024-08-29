@@ -1,6 +1,6 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.6.12",
+  "version": "0.6.13",
   "description": "layout algorithms for visualizing hierarchical data",
   "main": "build/hierarchy.js",
   "browser": "build/hierarchy.js",
@@ -33,8 +33,7 @@
     ],
     "silent": false
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -72,5 +71,8 @@
     "url": "https://github.com/antvis/hierarchy/issues"
   },
   "author": "https://github.com/orgs/antvis/people",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "MIT"
 }
