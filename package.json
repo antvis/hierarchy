@@ -33,8 +33,7 @@
     ],
     "silent": false
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -72,5 +71,8 @@
     "url": "https://github.com/antvis/hierarchy/issues"
   },
   "author": "https://github.com/orgs/antvis/people",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "license": "MIT"
 }
