@@ -3,7 +3,7 @@ const util = require("../util");
 function positionNode(node, previousNode, indent, dropCap, align) {
   //  caculate the node's horizontal offset DX, dx's type might be number or function
   const displacementX =
-    typeof indent === "function" ? indent(node) : indent * node.depth;
+    (typeof indent === "function" ? indent(node) : indent) * node.depth;
 
   if (!dropCap) {
     try {
