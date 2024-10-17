@@ -1,13 +1,13 @@
 const util = require("../util");
 
-function positionNode(node, previousNode, indent, dropCap, align) {
+function positionNode(node, previousNode, indent, dropCap, align, root) {
   //  caculate the node's horizontal offset DX, dx's type might be number or function
   const displacementX =
     (typeof indent === "function" ? indent(node) : indent) * node.depth;
 
   if (!dropCap) {
     try {
-      if (node.id === node.parent.children[0].id) {
+      if (node.id === node.parent.children[0].id || node.id === root.children[0].id) {
         node.x += displacementX;
         node.y = previousNode ? previousNode.y : 0;
         return;
@@ -34,7 +34,7 @@ function positionNode(node, previousNode, indent, dropCap, align) {
 module.exports = (root, indent, dropCap, align) => {
   let previousNode = null;
   root.eachNode((node) => {
-    positionNode(node, previousNode, indent, dropCap, align);
+    positionNode(node, previousNode, indent, dropCap, align, root);
     previousNode = node;
   });
 };
