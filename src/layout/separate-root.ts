@@ -1,19 +1,26 @@
-const hierarchy = require('./hierarchy');
+import hierarchy from './hierarchy';
+import type { HierarchyNode, HierarchyOptions } from '../types';
 
-module.exports = (root, options) => {
+export default function separateRoot(
+  root: HierarchyNode,
+  options: HierarchyOptions
+): { left: HierarchyNode; right: HierarchyNode } {
   // separate into left and right trees
   const left = hierarchy(root.data, options, true); // root only
   const right = hierarchy(root.data, options, true); // root only
+  
   // automatically
   const treeSize = root.children.length;
   const rightTreeSize = Math.round(treeSize / 2);
+  
   // separate left and right tree by meta data
-  const getSide = options.getSide || function(child, index) {
+  const getSide = options.getSide || function(_child: HierarchyNode, index: number): 'left' | 'right' {
     if (index < rightTreeSize) {
       return 'right';
     }
     return 'left';
   };
+  
   for (let i = 0; i < treeSize; i++) {
     const child = root.children[i];
     const side = getSide(child, i);
@@ -23,18 +30,21 @@ module.exports = (root, options) => {
       left.children.push(child);
     }
   }
+  
   left.eachNode(node => {
     if (!node.isRoot()) {
       node.side = 'left';
     }
   });
+  
   right.eachNode(node => {
     if (!node.isRoot()) {
       node.side = 'right';
     }
   });
+  
   return {
     left,
     right
   };
-};
+}

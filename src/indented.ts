@@ -1,27 +1,29 @@
-const TreeLayout = require('./layout/base');
-const indentedTree = require('./layout/indented');
-const separateTree = require('./layout/separate-root');
-const util = require('./util');
+import TreeLayout from './layout/base';
+import indentedTree from './layout/indented';
+import separateTree from './layout/separate-root';
+import { assign } from './util';
+import type { HierarchyData, HierarchyNode, IndentedOptions, Direction } from './types';
 
-
-const VALID_DIRECTIONS = [
+const VALID_DIRECTIONS: Direction[] = [
   'LR', // left to right
   'RL', // right to left
   'H' // horizontal
 ];
-const DEFAULT_DIRECTION = VALID_DIRECTIONS[0];
+const DEFAULT_DIRECTION: Direction = VALID_DIRECTIONS[0];
 
 class IndentedLayout extends TreeLayout {
-  execute() {
-    const me = this;
-    const options = me.options;
-    const root = me.rootNode;
+  execute(): HierarchyNode {
+    const options = this.options as IndentedOptions;
+    const root = this.rootNode;
     options.isHorizontal = true;
+    
     // default indent 20 and sink first children;
     const { indent = 20, dropCap = true, direction = DEFAULT_DIRECTION, align } = options;
+    
     if (direction && VALID_DIRECTIONS.indexOf(direction) === -1) {
       throw new TypeError(`Invalid direction: ${direction}`);
     }
+    
     if (direction === VALID_DIRECTIONS[0]) { // LR
       indentedTree(root, indent, dropCap, align);
     } else if (direction === VALID_DIRECTIONS[1]) { // RL
@@ -37,16 +39,17 @@ class IndentedLayout extends TreeLayout {
       right.translate(bbox.width, 0);
       root.x = right.x - root.width / 2;
     }
+    
     return root;
   }
 }
 
-const DEFAULT_OPTIONS = {
-};
+const DEFAULT_OPTIONS: IndentedOptions = {};
 
-function indentedLayout(root, options) {
-  options = util.assign({}, DEFAULT_OPTIONS, options);
-  return new IndentedLayout(root, options).execute();
+export default function indentedLayout(
+  root: HierarchyData,
+  options?: IndentedOptions
+): HierarchyNode {
+  const mergedOptions = assign({}, DEFAULT_OPTIONS, options);
+  return new IndentedLayout(root, mergedOptions).execute();
 }
-
-module.exports = indentedLayout;
