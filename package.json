@@ -23,6 +23,10 @@
     "README.md",
     "LICENSE"
   ],
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
   "scripts": {
     "build": "npm run build-types && vite build",
     "build-types": "tsc --emitDeclarationOnly",
