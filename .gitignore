@@ -62,11 +62,9 @@ typings/
 
 build
 dist
+lib
 temp
 .DS_Store
 .idea
 demos/assets/screenshots
-lib/*.js
-lib/**/*.js
-!lib/**/*.d.ts
 
