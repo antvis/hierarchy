@@ -1,10 +1,9 @@
-name: build
+name: CI
 
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
-  build:
-
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +18,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Lint check
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
       - name: Type check
         run: npm run type-check
+
+      - name: Run tests
+        run: npm run test:run
 
       - name: Build
         run: npm run build

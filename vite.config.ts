@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   root: 'demo',
+  plugins: [
+    dts({
+      include: ['src/**/*.ts'],
+      outDir: '../lib',
+      rollupTypes: true,
+      copyDtsFiles: true,
+    }),
+  ],
   build: {
     target: 'es2020',
     lib: {
