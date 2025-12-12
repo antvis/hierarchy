@@ -48,7 +48,7 @@ class WrappedTree implements WrappedTreeNode {
   static fromNode(root: HierarchyNode | null, isHorizontal?: boolean): WrappedTreeNode | null {
     if (!root) return null;
     const children: WrappedTreeNode[] = [];
-    root.children.forEach(child => {
+    root.children.forEach((child) => {
       const wrappedChild = WrappedTree.fromNode(child, isHorizontal);
       if (wrappedChild) children.push(wrappedChild);
     });
@@ -65,14 +65,14 @@ function moveRight(node: HierarchyNode, move: number, isHorizontal?: boolean): v
   } else {
     node.x += move;
   }
-  node.children.forEach(child => {
+  node.children.forEach((child) => {
     moveRight(child, move, isHorizontal);
   });
 }
 
 function getMin(node: HierarchyNode, isHorizontal?: boolean): number {
   let res = isHorizontal ? node.y : node.x;
-  node.children.forEach(child => {
+  node.children.forEach((child) => {
     res = Math.min(getMin(child, isHorizontal), res);
   });
   return res;
@@ -86,7 +86,7 @@ function normalize(node: HierarchyNode, isHorizontal?: boolean): void {
 function convertBack(
   converted: WrappedTreeNode,
   root: HierarchyNode,
-  isHorizontal?: boolean
+  isHorizontal?: boolean,
 ): void {
   if (isHorizontal) {
     root.y = converted.x;
@@ -106,7 +106,7 @@ function layer(node: HierarchyNode, isHorizontal?: boolean, d: number = 0): void
     node.y = d;
     d += node.height;
   }
-  node.children.forEach(child => {
+  node.children.forEach((child) => {
     layer(child, isHorizontal, d);
   });
 }
@@ -119,7 +119,7 @@ interface IYL {
 
 export default function nonLayeredTidy(
   root: HierarchyNode,
-  options: HierarchyOptions = {}
+  options: HierarchyOptions = {},
 ): HierarchyNode {
   const isHorizontal = options.isHorizontal;
 
@@ -160,7 +160,7 @@ export default function nonLayeredTidy(
     let mscl = cl.mod;
     while (sr !== null && cl !== null) {
       if (bottom(sr) > ih!.low) ih = ih!.nxt;
-      const dist = (mssr + sr.prelim + sr.w) - (mscl + cl.prelim);
+      const dist = mssr + sr.prelim + sr.w - (mscl + cl.prelim);
       if (dist > 0) {
         mscl += dist;
         moveSubtree(t, i, ih!.index, dist);
@@ -202,20 +202,30 @@ export default function nonLayeredTidy(
     return t.y + t.h;
   }
 
-  function setLeftThread(t: WrappedTreeNode, i: number, cl: WrappedTreeNode, modsumcl: number): void {
+  function setLeftThread(
+    t: WrappedTreeNode,
+    i: number,
+    cl: WrappedTreeNode,
+    modsumcl: number,
+  ): void {
     const li = t.c[0].el!;
     li.tl = cl;
-    const diff = (modsumcl - cl.mod) - t.c[0].msel;
+    const diff = modsumcl - cl.mod - t.c[0].msel;
     li.mod += diff;
     li.prelim -= diff;
     t.c[0].el = t.c[i].el;
     t.c[0].msel = t.c[i].msel;
   }
 
-  function setRightThread(t: WrappedTreeNode, i: number, sr: WrappedTreeNode, modsumsr: number): void {
+  function setRightThread(
+    t: WrappedTreeNode,
+    i: number,
+    sr: WrappedTreeNode,
+    modsumsr: number,
+  ): void {
     const ri = t.c[i].er!;
     ri.tr = sr;
-    const diff = (modsumsr - sr.mod) - t.c[i].mser;
+    const diff = modsumsr - sr.mod - t.c[i].mser;
     ri.mod += diff;
     ri.prelim -= diff;
     t.c[i].er = t.c[i - 1].er;
@@ -223,10 +233,10 @@ export default function nonLayeredTidy(
   }
 
   function positionRoot(t: WrappedTreeNode): void {
-    t.prelim = (
-      t.c[0].prelim + t.c[0].mod + t.c[t.cs - 1].mod +
-      t.c[t.cs - 1].prelim + t.c[t.cs - 1].w
-    ) / 2 - t.w / 2;
+    t.prelim =
+      (t.c[0].prelim + t.c[0].mod + t.c[t.cs - 1].mod + t.c[t.cs - 1].prelim + t.c[t.cs - 1].w) /
+        2 -
+      t.w / 2;
   }
 
   function secondWalk(t: WrappedTreeNode, modsum: number): void {
@@ -264,7 +274,7 @@ export default function nonLayeredTidy(
     return {
       low,
       index,
-      nxt: ih
+      nxt: ih,
     };
   }
 

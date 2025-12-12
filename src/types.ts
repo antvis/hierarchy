@@ -44,7 +44,7 @@ export interface HierarchyNode {
   startY?: number;
   totalHeight?: number;
   _subTreeSep?: number;
-  
+
   isRoot(): boolean;
   isLeaf(): boolean;
   addGap(hgap: number, vgap: number): void;

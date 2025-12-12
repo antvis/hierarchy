@@ -6,10 +6,10 @@ export default defineConfig({
   root: 'demo',
   plugins: [
     dts({
+      root: resolve(__dirname),
       include: ['src/**/*.ts'],
-      outDir: '../lib',
-      rollupTypes: true,
-      copyDtsFiles: true,
+      outDir: 'lib',
+      insertTypesEntry: true,
     }),
   ],
   build: {

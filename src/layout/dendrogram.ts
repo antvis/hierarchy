@@ -34,14 +34,10 @@ const DEFAULT_OPTIONS = {
   nodeSep: 20,
   nodeSize: 20,
   rankSep: 200,
-  subTreeSep: 10
+  subTreeSep: 10,
 };
 
-function convertBack(
-  converted: WrappedTreeNode,
-  root: HierarchyNode,
-  isHorizontal: boolean
-): void {
+function convertBack(converted: WrappedTreeNode, root: HierarchyNode, isHorizontal: boolean): void {
   if (isHorizontal) {
     root.x = converted.x;
     root.y = converted.y;
@@ -56,12 +52,12 @@ function convertBack(
 
 export default function dendrogram(
   root: HierarchyNode,
-  options: HierarchyOptions = {}
+  options: HierarchyOptions = {},
 ): HierarchyNode {
   const mergedOptions = assign({}, DEFAULT_OPTIONS, options);
 
   let maxDepth = 0;
-  
+
   function wrappedTreeFromNode(n: HierarchyNode): WrappedTreeNode {
     n.width = 0;
     if (n.depth && n.depth > maxDepth) {
@@ -76,7 +72,7 @@ export default function dendrogram(
       if (i === 0) {
         t.leftChild = childWT;
       }
-      if (i === (childrenCount - 1)) {
+      if (i === childrenCount - 1) {
         t.rightChild = childWT;
       }
     });
@@ -89,7 +85,7 @@ export default function dendrogram(
     if (t.isLeaf || t.children.length === 0) {
       t.drawingDepth = maxDepth;
     } else {
-      const depths = t.children.map(child => getDrawingDepth(child));
+      const depths = t.children.map((child) => getDrawingDepth(child));
       const minChildDepth = Math.min(...depths);
       t.drawingDepth = minChildDepth - 1;
     }
@@ -110,7 +106,7 @@ export default function dendrogram(
       }
       prevLeaf = t;
     } else {
-      t.children.forEach(child => {
+      t.children.forEach((child) => {
         position(child);
       });
       t.y = (t.leftChild!.y + t.rightChild!.y) / 2;
@@ -121,6 +117,6 @@ export default function dendrogram(
   getDrawingDepth(wt);
   position(wt);
   convertBack(wt, root, mergedOptions.isHorizontal);
-  
+
   return root;
 }

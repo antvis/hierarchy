@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS: DendrogramOptions = {};
 
 export default function dendrogramLayout(
   root: HierarchyData,
-  options?: DendrogramOptions
+  options?: DendrogramOptions,
 ): HierarchyNode {
   const mergedOptions = assign({}, DEFAULT_OPTIONS, options);
   return new DendrogramLayout(root, mergedOptions).execute();

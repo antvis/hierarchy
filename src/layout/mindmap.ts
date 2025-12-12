@@ -6,7 +6,7 @@ function secondWalk(node: HierarchyNode, options: HierarchyOptions): number {
   if (!node.children.length) {
     totalHeight = node.height;
   } else {
-    node.children.forEach(c => {
+    node.children.forEach((c) => {
       totalHeight += secondWalk(c, options);
     });
   }
@@ -19,14 +19,14 @@ function thirdWalk(node: HierarchyNode): void {
   const children = node.children;
   const len = children.length;
   if (len) {
-    children.forEach(c => {
+    children.forEach((c) => {
       thirdWalk(c);
     });
     const first = children[0];
     const last = children[len - 1];
     const childrenHeight = last.y - first.y + last.height;
     let childrenTotalHeight = 0;
-    children.forEach(child => {
+    children.forEach((child) => {
       childrenTotalHeight += child.totalHeight!;
     });
     if (childrenHeight > node.height) {
@@ -35,7 +35,7 @@ function thirdWalk(node: HierarchyNode): void {
     } else if (children.length !== 1 || node.height > childrenTotalHeight) {
       // 多于一个子节点或者父节点大于所有子节点的总高度
       const offset = node.y + (node.height - childrenHeight) / 2 - first.y;
-      children.forEach(c => {
+      children.forEach((c) => {
         c.translate(0, offset);
       });
     } else {
@@ -48,37 +48,37 @@ function thirdWalk(node: HierarchyNode): void {
 const DEFAULT_OPTIONS: HierarchyOptions = {
   getSubTreeSep() {
     return 0;
-  }
+  },
 };
 
 export default function mindmap(
   root: HierarchyNode,
-  options: HierarchyOptions = {}
+  options: HierarchyOptions = {},
 ): HierarchyNode {
   options = assign({}, DEFAULT_OPTIONS, options);
-  
+
   root.parent = {
     x: 0,
     width: 0,
     height: 0,
-    y: 0
+    y: 0,
   } as HierarchyNode;
-  
+
   // first walk
-  root.BFTraverse(node => {
+  root.BFTraverse((node) => {
     node.x = node.parent!.x + node.parent!.width;
   });
-  
+
   root.parent = undefined;
-  
+
   // second walk
   secondWalk(root, options);
-  
+
   // adjusting
   // separating nodes
   root.startY = 0;
   root.y = root.totalHeight! / 2 - root.height / 2;
-  root.eachNode(node => {
+  root.eachNode((node) => {
     const children = node.children;
     const len = children.length;
     if (len) {
@@ -99,6 +99,6 @@ export default function mindmap(
 
   // third walk
   thirdWalk(root);
-  
+
   return root;
 }

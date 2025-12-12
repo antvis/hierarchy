@@ -7,16 +7,12 @@ const VALID_DIRECTIONS: Direction[] = [
   'TB', // top to bottom
   'BT', // bottom to top
   'H', // horizontal
-  'V' // vertical
+  'V', // vertical
 ];
 
-const HORIZONTAL_DIRECTIONS: Direction[] = [
-  'LR',
-  'RL',
-  'H'
-];
+const HORIZONTAL_DIRECTIONS: Direction[] = ['LR', 'RL', 'H'];
 
-const isHorizontal = (direction: Direction): boolean => 
+const isHorizontal = (direction: Direction): boolean =>
   HORIZONTAL_DIRECTIONS.indexOf(direction) > -1;
 
 const DEFAULT_DIRECTION: Direction = VALID_DIRECTIONS[0];
@@ -26,11 +22,11 @@ type LayoutAlgorithm = (root: HierarchyNode, options: HierarchyOptions) => Hiera
 export default function doLayout(
   root: HierarchyNode,
   options: HierarchyOptions,
-  layoutAlgorithm: LayoutAlgorithm
+  layoutAlgorithm: LayoutAlgorithm,
 ): HierarchyNode {
   const direction = options.direction || DEFAULT_DIRECTION;
   options.isHorizontal = isHorizontal(direction);
-  
+
   if (direction && VALID_DIRECTIONS.indexOf(direction) === -1) {
     throw new TypeError(`Invalid direction: ${direction}`);
   }
@@ -56,7 +52,11 @@ export default function doLayout(
     // do layout for left and right trees
     layoutAlgorithm(left, options);
     layoutAlgorithm(right, options);
-    options.isHorizontal ? left.right2left() : left.bottom2top();
+    if (options.isHorizontal) {
+      left.right2left();
+    } else {
+      left.bottom2top();
+    }
     // combine left and right trees
     right.translate(left.x - right.x, left.y - right.y);
     // translate root
@@ -73,15 +73,12 @@ export default function doLayout(
       }
     }
   }
-  
+
   // fixed root position, default value is true
   let fixedRoot = options.fixedRoot;
   if (fixedRoot === undefined) fixedRoot = true;
   if (fixedRoot) {
-    root.translate(
-      -(root.x + root.width / 2 + root.hgap),
-      -(root.y + root.height / 2 + root.vgap)
-    );
+    root.translate(-(root.x + root.width / 2 + root.hgap), -(root.y + root.height / 2 + root.vgap));
   }
 
   reassignXYIfRadial(root, options);
@@ -115,10 +112,8 @@ function reassignXYIfRadial(root: HierarchyNode, options: HierarchyOptions): voi
       const minRadScale = min[radScale as 'x' | 'y'];
       const nodeRScale = node[rScale as 'x' | 'y'];
       const rootRScale = root[rScale as 'x' | 'y'];
-      
-      const rad =
-        ((nodeRadScale - minRadScale) / radDiff) * (Math.PI * 2 - avgRad) +
-        avgRad;
+
+      const rad = ((nodeRadScale - minRadScale) / radDiff) * (Math.PI * 2 - avgRad) + avgRad;
       const r = nodeRScale - rootRScale;
       node.x = Math.cos(rad) * r;
       node.y = Math.sin(rad) * r;

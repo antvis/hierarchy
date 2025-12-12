@@ -14,7 +14,7 @@ const DEFAULT_OPTIONS: MindmapOptions = {};
 
 export default function mindmapLayout(
   root: HierarchyData,
-  options?: MindmapOptions
+  options?: MindmapOptions,
 ): HierarchyNode {
   const mergedOptions = assign({}, DEFAULT_OPTIONS, options);
   return new MindmapLayout(root, mergedOptions).execute();

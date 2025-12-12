@@ -14,7 +14,7 @@ const DEFAULT_OPTIONS: CompactBoxOptions = {};
 
 export default function compactBoxLayout(
   root: HierarchyData,
-  options?: CompactBoxOptions
+  options?: CompactBoxOptions,
 ): HierarchyNode {
   const mergedOptions = assign({}, DEFAULT_OPTIONS, options);
   return new CompactBoxTreeLayout(root, mergedOptions).execute();

@@ -12,7 +12,7 @@ export function getHeight(
   preNode: HierarchyNode,
   node: HierarchyNode,
   align?: 'center' | undefined,
-  heightField: keyof HierarchyNode = 'height'
+  heightField: keyof HierarchyNode = 'height',
 ): number {
   const preNodeHeight = preNode[heightField] as number;
   const nodeHeight = node[heightField] as number;

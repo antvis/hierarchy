@@ -6,11 +6,10 @@ function positionNode(
   previousNode: HierarchyNode | null,
   indent: number | ((node: HierarchyNode) => number),
   dropCap: boolean,
-  align?: 'center' | undefined
+  align?: 'center' | undefined,
 ): void {
   // calculate the node's horizontal offset DX, dx's type might be number or function
-  const displacementX =
-    (typeof indent === 'function' ? indent(node) : indent) * node.depth;
+  const displacementX = (typeof indent === 'function' ? indent(node) : indent) * node.depth;
 
   if (!dropCap) {
     try {
@@ -19,7 +18,7 @@ function positionNode(
         node.y = previousNode ? previousNode.y : 0;
         return;
       }
-    } catch (e) {
+    } catch {
       // skip to normal when a node has no parent
     }
   }
@@ -42,7 +41,7 @@ export default function indented(
   root: HierarchyNode,
   indent: number | ((node: HierarchyNode) => number),
   dropCap: boolean,
-  align?: 'center' | undefined
+  align?: 'center' | undefined,
 ): void {
   let previousNode: HierarchyNode | null = null;
   root.eachNode((node) => {

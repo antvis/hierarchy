@@ -1,4 +1,3 @@
-/* eslint-disable no-cond-assign */
 import { assign } from '../util';
 import type { HierarchyData, HierarchyNode, HierarchyOptions, BoundingBox } from '../types';
 
@@ -6,10 +5,19 @@ const PEM = 18;
 const DEFAULT_HEIGHT = PEM * 2;
 const DEFAULT_GAP = PEM;
 
-const DEFAULT_OPTIONS: Required<Pick<
-  HierarchyOptions,
-  'getId' | 'getPreH' | 'getPreV' | 'getHGap' | 'getVGap' | 'getChildren' | 'getHeight' | 'getWidth'
->> = {
+const DEFAULT_OPTIONS: Required<
+  Pick<
+    HierarchyOptions,
+    | 'getId'
+    | 'getPreH'
+    | 'getPreV'
+    | 'getHGap'
+    | 'getVGap'
+    | 'getChildren'
+    | 'getHeight'
+    | 'getWidth'
+  >
+> = {
   getId(d: HierarchyData): string {
     return (d.id || d.name) as string;
   },
@@ -33,8 +41,8 @@ const DEFAULT_OPTIONS: Required<Pick<
   },
   getWidth(d: HierarchyData): number {
     const label = d.label || ' ';
-    return d.width || (label.split('').length * PEM); // FIXME DO NOT get width like this
-  }
+    return d.width || label.split('').length * PEM; // FIXME DO NOT get width like this
+  },
 };
 
 class Node implements HierarchyNode {
@@ -71,9 +79,9 @@ class Node implements HierarchyNode {
       this.preV = node.preV;
       return;
     }
-    
+
     this.data = data as HierarchyData;
-    
+
     /*
      * Gaps: filling space between nodes
      * (x, y) ----------------------
@@ -96,7 +104,7 @@ class Node implements HierarchyNode {
     this.width += this.preH;
     this.height += this.preV;
     this.id = options.getId!(data);
-    
+
     this.addGap(hgap, vgap);
   }
 
@@ -118,7 +126,7 @@ class Node implements HierarchyNode {
   eachNode(callback: (node: HierarchyNode) => void): void {
     let nodes: HierarchyNode[] = [this];
     let current: HierarchyNode | undefined;
-    while (current = nodes.shift()) {
+    while ((current = nodes.shift())) {
       callback(current);
       nodes = current.children.concat(nodes);
     }
@@ -131,7 +139,7 @@ class Node implements HierarchyNode {
   BFTraverse(callback: (node: HierarchyNode) => void): void {
     let nodes: HierarchyNode[] = [this];
     let current: HierarchyNode | undefined;
-    while (current = nodes.shift()) {
+    while ((current = nodes.shift())) {
       callback(current);
       nodes = nodes.concat(current.children);
     }
@@ -142,9 +150,9 @@ class Node implements HierarchyNode {
       left: Number.MAX_VALUE,
       top: Number.MAX_VALUE,
       width: 0,
-      height: 0
+      height: 0,
     };
-    this.eachNode(node => {
+    this.eachNode((node) => {
       bb.left = Math.min(bb.left, node.x);
       bb.top = Math.min(bb.top, node.y);
       bb.width = Math.max(bb.width, node.x + node.width);
@@ -154,7 +162,7 @@ class Node implements HierarchyNode {
   }
 
   translate(tx: number = 0, ty: number = 0): void {
-    this.eachNode(node => {
+    this.eachNode((node) => {
       node.x += tx;
       node.y += ty;
       node.x += node.preH;
@@ -164,7 +172,7 @@ class Node implements HierarchyNode {
 
   right2left(): void {
     const bb = this.getBoundingBox();
-    this.eachNode(node => {
+    this.eachNode((node) => {
       node.x = node.x - (node.x - bb.left) * 2 - node.width;
     });
     this.translate(bb.width, 0);
@@ -172,7 +180,7 @@ class Node implements HierarchyNode {
 
   bottom2top(): void {
     const bb = this.getBoundingBox();
-    this.eachNode(node => {
+    this.eachNode((node) => {
       node.y = node.y - (node.y - bb.top) * 2 - node.height;
     });
     this.translate(0, bb.height);
@@ -182,15 +190,15 @@ class Node implements HierarchyNode {
 export default function hierarchy(
   data: HierarchyData,
   options: HierarchyOptions = {},
-  isolated?: boolean
+  isolated?: boolean,
 ): HierarchyNode {
   options = assign({}, DEFAULT_OPTIONS, options);
   const root = new Node(data, options);
   const nodes: HierarchyNode[] = [root];
   let node: HierarchyNode | undefined;
-  
+
   if (!isolated && !data.collapsed) {
-    while (node = nodes.shift()) {
+    while ((node = nodes.shift())) {
       if (!node.data.collapsed) {
         const children = options.getChildren!(node.data);
         const length = children ? children.length : 0;
@@ -207,6 +215,6 @@ export default function hierarchy(
       }
     }
   }
-  
+
   return root;
 }

@@ -11,5 +11,5 @@ export default {
   compactBox,
   dendrogram,
   indented,
-  mindmap
+  mindmap,
 };
