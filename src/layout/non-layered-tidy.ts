@@ -159,11 +159,11 @@ export default function nonLayeredTidy(
     let cl: WrappedTreeNode | null = t.c[i];
     let mscl = cl.mod;
     while (sr !== null && cl !== null) {
-      if (bottom(sr) > ih!.low) ih = ih!.nxt;
+      if (ih && bottom(sr) > ih.low) ih = ih.nxt;
       const dist = mssr + sr.prelim + sr.w - (mscl + cl.prelim);
       if (dist > 0) {
         mscl += dist;
-        moveSubtree(t, i, ih!.index, dist);
+        if (ih) moveSubtree(t, i, ih.index, dist);
       }
       const sy = bottom(sr);
       const cy = bottom(cl);
