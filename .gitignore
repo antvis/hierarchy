@@ -68,3 +68,8 @@ temp
 .idea
 demos/assets/screenshots
 
+# Test outputs - ignore new snapshots generated during updates
+__tests__/snapshots/*.svg.new
+
+# Vitest
+.vitest

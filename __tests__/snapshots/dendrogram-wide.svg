@@ -1,0 +1,41 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="50" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="105.55555555555556" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="161.11111111111111" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="216.66666666666669" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="272.22222222222223" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="327.77777777777777" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="383.33333333333337" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="438.8888888888889" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="494.44444444444446" />
+    <line class="link" x1="50" y1="300" x2="170.77294685990339" y2="550" />
+    <circle class="node" cx="50" cy="300" r="5" />
+    <text class="label" x="50" y="290">root</text>
+    <circle class="node" cx="170.77294685990339" cy="50" r="5" />
+    <text class="label" x="170.77294685990339" y="40">child-0</text>
+    <circle class="node" cx="170.77294685990339" cy="105.55555555555556" r="5" />
+    <text class="label" x="170.77294685990339" y="95.55555555555556">child-1</text>
+    <circle class="node" cx="170.77294685990339" cy="161.11111111111111" r="5" />
+    <text class="label" x="170.77294685990339" y="151.11111111111111">child-2</text>
+    <circle class="node" cx="170.77294685990339" cy="216.66666666666669" r="5" />
+    <text class="label" x="170.77294685990339" y="206.66666666666669">child-3</text>
+    <circle class="node" cx="170.77294685990339" cy="272.22222222222223" r="5" />
+    <text class="label" x="170.77294685990339" y="262.22222222222223">child-4</text>
+    <circle class="node" cx="170.77294685990339" cy="327.77777777777777" r="5" />
+    <text class="label" x="170.77294685990339" y="317.77777777777777">child-5</text>
+    <circle class="node" cx="170.77294685990339" cy="383.33333333333337" r="5" />
+    <text class="label" x="170.77294685990339" y="373.33333333333337">child-6</text>
+    <circle class="node" cx="170.77294685990339" cy="438.8888888888889" r="5" />
+    <text class="label" x="170.77294685990339" y="428.8888888888889">child-7</text>
+    <circle class="node" cx="170.77294685990339" cy="494.44444444444446" r="5" />
+    <text class="label" x="170.77294685990339" y="484.44444444444446">child-8</text>
+    <circle class="node" cx="170.77294685990339" cy="550" r="5" />
+    <text class="label" x="170.77294685990339" y="540">child-9</text>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="50" x2="109.52380952380952" y2="216.66666666666669" />
+    <line class="link" x1="50" y1="50" x2="109.52380952380952" y2="383.33333333333337" />
+    <line class="link" x1="50" y1="50" x2="109.52380952380952" y2="550" />
+    <circle class="node" cx="50" cy="50" r="5" />
+    <text class="label" x="50" y="40">root</text>
+    <circle class="node" cx="109.52380952380952" cy="216.66666666666669" r="5" />
+    <text class="label" x="109.52380952380952" y="206.66666666666669">c1</text>
+    <circle class="node" cx="109.52380952380952" cy="383.33333333333337" r="5" />
+    <text class="label" x="109.52380952380952" y="373.33333333333337">c2</text>
+    <circle class="node" cx="109.52380952380952" cy="550" r="5" />
+    <text class="label" x="109.52380952380952" y="540">c3</text>
+  </g>
+</svg>

@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  root: 'demo',
   build: {
     target: 'es2020',
     lib: {
@@ -10,7 +11,7 @@ export default defineConfig({
       formats: ['es', 'umd'],
       fileName: (format) => `hierarchy.${format}.js`,
     },
-    outDir: 'dist',
+    outDir: '../dist',
     sourcemap: true,
     minify: 'terser',
     rollupOptions: {
@@ -21,5 +22,12 @@ export default defineConfig({
   },
   resolve: {
     extensions: ['.ts', '.js'],
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
+  server: {
+    open: true,
+    port: 3000,
   },
 });

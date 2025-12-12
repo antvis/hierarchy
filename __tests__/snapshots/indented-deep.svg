@@ -1,0 +1,23 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="50" x2="84.72222222222223" y2="175" />
+    <line class="link" x1="84.72222222222223" y1="175" x2="119.44444444444444" y2="300" />
+    <line class="link" x1="119.44444444444444" y1="300" x2="154.16666666666669" y2="425" />
+    <line class="link" x1="154.16666666666669" y1="425" x2="188.88888888888889" y2="550" />
+    <circle class="node" cx="50" cy="50" r="5" />
+    <text class="label" x="50" y="40">root</text>
+    <circle class="node" cx="84.72222222222223" cy="175" r="5" />
+    <text class="label" x="84.72222222222223" y="165">level-1</text>
+    <circle class="node" cx="119.44444444444444" cy="300" r="5" />
+    <text class="label" x="119.44444444444444" y="290">level-2</text>
+    <circle class="node" cx="154.16666666666669" cy="425" r="5" />
+    <text class="label" x="154.16666666666669" y="415">level-3</text>
+    <circle class="node" cx="188.88888888888889" cy="550" r="5" />
+    <text class="label" x="188.88888888888889" y="540">level-4</text>
+  </g>
+</svg>

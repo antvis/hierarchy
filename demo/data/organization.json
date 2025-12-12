@@ -1,0 +1,40 @@
+{
+  "id": "CEO",
+  "children": [
+    {
+      "id": "CTO",
+      "children": [
+        {
+          "id": "Engineering Manager",
+          "children": [
+            { "id": "Frontend Team Lead" },
+            { "id": "Backend Team Lead" },
+            { "id": "DevOps Lead" }
+          ]
+        },
+        {
+          "id": "Product Manager",
+          "children": [
+            { "id": "Product Designer" },
+            { "id": "UX Researcher" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CFO",
+      "children": [
+        { "id": "Accountant" },
+        { "id": "Financial Analyst" }
+      ]
+    },
+    {
+      "id": "CMO",
+      "children": [
+        { "id": "Marketing Manager" },
+        { "id": "Sales Manager" },
+        { "id": "PR Manager" }
+      ]
+    }
+  ]
+}

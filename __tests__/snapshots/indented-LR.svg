@@ -1,0 +1,35 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="50" x2="67.36111111111111" y2="112.5" />
+    <line class="link" x1="67.36111111111111" y1="112.5" x2="84.72222222222223" y2="175" />
+    <line class="link" x1="67.36111111111111" y1="112.5" x2="84.72222222222223" y2="237.5" />
+    <line class="link" x1="50" y1="50" x2="67.36111111111111" y2="300" />
+    <line class="link" x1="67.36111111111111" y1="300" x2="84.72222222222223" y2="362.5" />
+    <line class="link" x1="67.36111111111111" y1="300" x2="84.72222222222223" y2="425" />
+    <line class="link" x1="67.36111111111111" y1="300" x2="84.72222222222223" y2="487.5" />
+    <line class="link" x1="50" y1="50" x2="67.36111111111111" y2="550" />
+    <circle class="node" cx="50" cy="50" r="5" />
+    <text class="label" x="50" y="40">root</text>
+    <circle class="node" cx="67.36111111111111" cy="112.5" r="5" />
+    <text class="label" x="67.36111111111111" y="102.5">c1</text>
+    <circle class="node" cx="84.72222222222223" cy="175" r="5" />
+    <text class="label" x="84.72222222222223" y="165">c1-1</text>
+    <circle class="node" cx="84.72222222222223" cy="237.5" r="5" />
+    <text class="label" x="84.72222222222223" y="227.5">c1-2</text>
+    <circle class="node" cx="67.36111111111111" cy="300" r="5" />
+    <text class="label" x="67.36111111111111" y="290">c2</text>
+    <circle class="node" cx="84.72222222222223" cy="362.5" r="5" />
+    <text class="label" x="84.72222222222223" y="352.5">c2-1</text>
+    <circle class="node" cx="84.72222222222223" cy="425" r="5" />
+    <text class="label" x="84.72222222222223" y="415">c2-2</text>
+    <circle class="node" cx="84.72222222222223" cy="487.5" r="5" />
+    <text class="label" x="84.72222222222223" y="477.5">c2-3</text>
+    <circle class="node" cx="67.36111111111111" cy="550" r="5" />
+    <text class="label" x="67.36111111111111" y="540">c3</text>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="277.90697674418607" x2="750" y2="50" />
+    <line class="link" x1="50" y1="277.90697674418607" x2="750" y2="505.81395348837214" />
+    <circle class="node" cx="50" cy="277.90697674418607" r="5" />
+    <text class="label" x="50" y="267.90697674418607">root</text>
+    <circle class="node" cx="750" cy="50" r="5" />
+    <text class="label" x="750" y="40">left-1</text>
+    <circle class="node" cx="750" cy="505.81395348837214" r="5" />
+    <text class="label" x="750" y="495.81395348837214">right-1</text>
+  </g>
+</svg>

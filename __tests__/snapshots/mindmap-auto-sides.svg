@@ -1,0 +1,35 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="50" y1="325" x2="125" y2="100" />
+    <line class="link" x1="125" y1="100" x2="200" y2="50" />
+    <line class="link" x1="125" y1="100" x2="200" y2="150" />
+    <line class="link" x1="50" y1="325" x2="125" y2="350" />
+    <line class="link" x1="125" y1="350" x2="200" y2="250" />
+    <line class="link" x1="125" y1="350" x2="200" y2="350" />
+    <line class="link" x1="125" y1="350" x2="200" y2="450" />
+    <line class="link" x1="50" y1="325" x2="125" y2="550" />
+    <circle class="node" cx="50" cy="325" r="5" />
+    <text class="label" x="50" y="315">root</text>
+    <circle class="node" cx="125" cy="100" r="5" />
+    <text class="label" x="125" y="90">c1</text>
+    <circle class="node" cx="200" cy="50" r="5" />
+    <text class="label" x="200" y="40">c1-1</text>
+    <circle class="node" cx="200" cy="150" r="5" />
+    <text class="label" x="200" y="140">c1-2</text>
+    <circle class="node" cx="125" cy="350" r="5" />
+    <text class="label" x="125" y="340">c2</text>
+    <circle class="node" cx="200" cy="250" r="5" />
+    <text class="label" x="200" y="240">c2-1</text>
+    <circle class="node" cx="200" cy="350" r="5" />
+    <text class="label" x="200" y="340">c2-2</text>
+    <circle class="node" cx="200" cy="450" r="5" />
+    <text class="label" x="200" y="440">c2-3</text>
+    <circle class="node" cx="125" cy="550" r="5" />
+    <text class="label" x="125" y="540">c3</text>
+  </g>
+</svg>
