@@ -13,3 +13,5 @@ export default {
   indented,
   mindmap,
 };
+
+export const version = '0.7.0';
