@@ -62,9 +62,14 @@ typings/
 
 build
 dist
+lib
 temp
 .DS_Store
 .idea
 demos/assets/screenshots
-lib
 
+# Test outputs - ignore new snapshots generated during updates
+__tests__/snapshots/*.svg.new
+
+# Vitest
+.vitest

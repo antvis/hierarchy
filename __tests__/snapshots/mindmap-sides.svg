@@ -1,0 +1,29 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="400" y1="166.66666666666669" x2="575" y2="166.66666666666669" />
+    <line class="link" x1="575" y1="166.66666666666669" x2="750" y2="50" />
+    <line class="link" x1="575" y1="166.66666666666669" x2="750" y2="283.33333333333337" />
+    <line class="link" x1="400" y1="166.66666666666669" x2="225" y2="166.66666666666669" />
+    <line class="link" x1="225" y1="166.66666666666669" x2="50" y2="50" />
+    <line class="link" x1="225" y1="166.66666666666669" x2="50" y2="283.33333333333337" />
+    <circle class="node" cx="400" cy="166.66666666666669" r="5" />
+    <text class="label" x="400" y="156.66666666666669">root</text>
+    <circle class="node" cx="575" cy="166.66666666666669" r="5" />
+    <text class="label" x="575" y="156.66666666666669">left-1</text>
+    <circle class="node" cx="750" cy="50" r="5" />
+    <text class="label" x="750" y="40">left-1-1</text>
+    <circle class="node" cx="750" cy="283.33333333333337" r="5" />
+    <text class="label" x="750" y="273.33333333333337">left-1-2</text>
+    <circle class="node" cx="225" cy="166.66666666666669" r="5" />
+    <text class="label" x="225" y="156.66666666666669">right-1</text>
+    <circle class="node" cx="50" cy="50" r="5" />
+    <text class="label" x="50" y="40">right-1-1</text>
+    <circle class="node" cx="50" cy="283.33333333333337" r="5" />
+    <text class="label" x="50" y="273.33333333333337">right-1-2</text>
+  </g>
+</svg>

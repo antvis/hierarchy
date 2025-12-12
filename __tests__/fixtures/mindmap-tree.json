@@ -1,0 +1,22 @@
+{
+  "id": "root",
+  "side": "root",
+  "children": [
+    {
+      "id": "left-1",
+      "side": "left",
+      "children": [
+        { "id": "left-1-1", "side": "left" },
+        { "id": "left-1-2", "side": "left" }
+      ]
+    },
+    {
+      "id": "right-1",
+      "side": "right",
+      "children": [
+        { "id": "right-1-1", "side": "right" },
+        { "id": "right-1-2", "side": "right" }
+      ]
+    }
+  ]
+}

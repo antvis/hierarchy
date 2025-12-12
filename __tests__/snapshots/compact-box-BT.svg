@@ -1,0 +1,35 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .link { stroke: #999; stroke-width: 1.5; fill: none; }
+    .node { fill: #69b3a2; stroke: #333; stroke-width: 1.5; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+  <g>
+    <line class="link" x1="443.75" y1="516.6666666666667" x2="137.5" y2="283.33333333333337" />
+    <line class="link" x1="137.5" y1="283.33333333333337" x2="50" y2="50" />
+    <line class="link" x1="137.5" y1="283.33333333333337" x2="225" y2="50" />
+    <line class="link" x1="443.75" y1="516.6666666666667" x2="575" y2="283.33333333333337" />
+    <line class="link" x1="575" y1="283.33333333333337" x2="400" y2="50" />
+    <line class="link" x1="575" y1="283.33333333333337" x2="575" y2="50" />
+    <line class="link" x1="575" y1="283.33333333333337" x2="750" y2="50" />
+    <line class="link" x1="443.75" y1="516.6666666666667" x2="750" y2="283.33333333333337" />
+    <circle class="node" cx="443.75" cy="516.6666666666667" r="5" />
+    <text class="label" x="443.75" y="506.66666666666674">root</text>
+    <circle class="node" cx="137.5" cy="283.33333333333337" r="5" />
+    <text class="label" x="137.5" y="273.33333333333337">c1</text>
+    <circle class="node" cx="50" cy="50" r="5" />
+    <text class="label" x="50" y="40">c1-1</text>
+    <circle class="node" cx="225" cy="50" r="5" />
+    <text class="label" x="225" y="40">c1-2</text>
+    <circle class="node" cx="575" cy="283.33333333333337" r="5" />
+    <text class="label" x="575" y="273.33333333333337">c2</text>
+    <circle class="node" cx="400" cy="50" r="5" />
+    <text class="label" x="400" y="40">c2-1</text>
+    <circle class="node" cx="575" cy="50" r="5" />
+    <text class="label" x="575" y="40">c2-2</text>
+    <circle class="node" cx="750" cy="50" r="5" />
+    <text class="label" x="750" y="40">c2-3</text>
+    <circle class="node" cx="750" cy="283.33333333333337" r="5" />
+    <text class="label" x="750" y="273.33333333333337">c3</text>
+  </g>
+</svg>

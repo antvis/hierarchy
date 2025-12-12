@@ -64,6 +64,15 @@ typings/
 demos
 temp
 test
+src
+tsconfig.json
+vite.config.ts
+.babelrc
 webpack-dev.config.js
 webpack.config.js
+.eslintrc
+.eslintignore
 .DS_Store
+.github
+bin
+assets

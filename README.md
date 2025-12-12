@@ -9,13 +9,61 @@
 [![npm Download](https://img.shields.io/npm/dm/@antv/hierarchy.svg)](https://www.npmjs.com/package/@antv/hierarchy)
 [![npm License](https://img.shields.io/npm/l/@antv/hierarchy.svg)](https://www.npmjs.com/package/@antv/hierarchy)
 
+## Features
+
+✨ **TypeScript Support**: Fully typed with TypeScript for better IDE support and type safety
+
+🚀 **Modern Build System**: Built with Vite for faster builds and smaller bundle sizes
+
+📦 **Multiple Formats**: Supports both ES modules and UMD formats
+
+🎯 **Tree-shakeable**: ES module format allows for efficient tree-shaking
+
+## Installation
+
+```bash
+npm install @antv/hierarchy
+```
+
+## Usage
+
+### ES Module (Recommended)
+
+```typescript
+import { compactBox } from '@antv/hierarchy';
+// or
+import * as Hierarchy from '@antv/hierarchy';
+```
+
+### CommonJS
+
+```javascript
+const Hierarchy = require('@antv/hierarchy');
+```
+
+### TypeScript
+
+This library includes TypeScript definitions. You'll get full IntelliSense support:
+
+```typescript
+import { compactBox, type HierarchyNode, type CompactBoxOptions } from '@antv/hierarchy';
+
+const options: CompactBoxOptions = {
+  direction: 'LR',
+  getId: (d) => d.id,
+  getWidth: (d) => 100,
+  getHeight: (d) => 50
+};
+```
 
 ## API
 
 ### example
 
-```js
-const Hierarchy = require('@antv/hierarchy');
+```typescript
+import { compactBox } from '@antv/hierarchy';
+// or for CommonJS
+// const { compactBox } = require('@antv/hierarchy');
 
 // your tree data
 const root = {
@@ -43,7 +91,7 @@ const root = {
 const NODE_SIZE = 16;
 const PEM = 5;
 const ctx = document.getElementById('id-of-canvas-element').getContext('2d');
-const rootNode = Hierarchy.compactBox(root, {
+const rootNode = compactBox(root, {
   direction: 'H', // H / V / LR / RL / TB / BT
   getId(d) {
     return d.id;
