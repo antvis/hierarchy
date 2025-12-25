@@ -65,7 +65,7 @@ export default function dendrogram(
     }
     const children = n.children;
     const childrenCount = children.length;
-    const t = new WrappedTree(n.height, []);
+    const t = new WrappedTree(0, []);
     children.forEach((child, i) => {
       const childWT = wrappedTreeFromNode(child);
       t.children.push(childWT);

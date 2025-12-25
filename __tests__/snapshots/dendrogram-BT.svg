@@ -5,31 +5,31 @@
     .label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
   </style>
   <g>
-    <line class="link" x1="378.75" y1="550" x2="107.5" y2="300" />
-    <line class="link" x1="107.5" y1="300" x2="50" y2="50" />
-    <line class="link" x1="107.5" y1="300" x2="165" y2="50" />
-    <line class="link" x1="378.75" y1="550" x2="407.5" y2="300" />
-    <line class="link" x1="407.5" y1="300" x2="292.5" y2="50" />
-    <line class="link" x1="407.5" y1="300" x2="407.5" y2="50" />
-    <line class="link" x1="407.5" y1="300" x2="522.5" y2="50" />
-    <line class="link" x1="378.75" y1="550" x2="650" y2="50" />
-    <circle class="node" cx="378.75" cy="550" r="5" />
-    <text class="label" x="378.75" y="540">root</text>
-    <circle class="node" cx="107.5" cy="300" r="5" />
-    <text class="label" x="107.5" y="290">c1</text>
+    <line class="link" x1="131.25" y1="550" x2="62.5" y2="300" />
+    <line class="link" x1="62.5" y1="300" x2="50" y2="50" />
+    <line class="link" x1="62.5" y1="300" x2="75" y2="50" />
+    <line class="link" x1="131.25" y1="550" x2="137.5" y2="300" />
+    <line class="link" x1="137.5" y1="300" x2="112.5" y2="50" />
+    <line class="link" x1="137.5" y1="300" x2="137.5" y2="50" />
+    <line class="link" x1="137.5" y1="300" x2="162.5" y2="50" />
+    <line class="link" x1="131.25" y1="550" x2="200" y2="50" />
+    <circle class="node" cx="131.25" cy="550" r="5" />
+    <text class="label" x="131.25" y="540">root</text>
+    <circle class="node" cx="62.5" cy="300" r="5" />
+    <text class="label" x="62.5" y="290">c1</text>
     <circle class="node" cx="50" cy="50" r="5" />
     <text class="label" x="50" y="40">c1-1</text>
-    <circle class="node" cx="165" cy="50" r="5" />
-    <text class="label" x="165" y="40">c1-2</text>
-    <circle class="node" cx="407.5" cy="300" r="5" />
-    <text class="label" x="407.5" y="290">c2</text>
-    <circle class="node" cx="292.5" cy="50" r="5" />
-    <text class="label" x="292.5" y="40">c2-1</text>
-    <circle class="node" cx="407.5" cy="50" r="5" />
-    <text class="label" x="407.5" y="40">c2-2</text>
-    <circle class="node" cx="522.5" cy="50" r="5" />
-    <text class="label" x="522.5" y="40">c2-3</text>
-    <circle class="node" cx="650" cy="50" r="5" />
-    <text class="label" x="650" y="40">c3</text>
+    <circle class="node" cx="75" cy="50" r="5" />
+    <text class="label" x="75" y="40">c1-2</text>
+    <circle class="node" cx="137.5" cy="300" r="5" />
+    <text class="label" x="137.5" y="290">c2</text>
+    <circle class="node" cx="112.5" cy="50" r="5" />
+    <text class="label" x="112.5" y="40">c2-1</text>
+    <circle class="node" cx="137.5" cy="50" r="5" />
+    <text class="label" x="137.5" y="40">c2-2</text>
+    <circle class="node" cx="162.5" cy="50" r="5" />
+    <text class="label" x="162.5" y="40">c2-3</text>
+    <circle class="node" cx="200" cy="50" r="5" />
+    <text class="label" x="200" y="40">c3</text>
   </g>
 </svg>
