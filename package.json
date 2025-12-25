@@ -1,6 +1,6 @@
 {
   "name": "@antv/hierarchy",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "layout algorithms for visualizing hierarchical data",
   "type": "module",
   "main": "dist/hierarchy.umd.js",
