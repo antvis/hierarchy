@@ -55,7 +55,6 @@ describe('Mindmap Layout', () => {
       // In horizontal layout, left nodes should be on the left side
       const leftX = leftNodes[0].x || 0;
       const rightX = rightNodes[0].x || 0;
-      const rootX = result.x || 0;
 
       // This depends on the actual implementation
       expect(Math.abs(leftX - rightX)).toBeGreaterThan(0);

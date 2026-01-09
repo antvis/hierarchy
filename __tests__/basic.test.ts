@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { compactBox, dendrogram, indented, mindmap } from '../src/index';
-import type { HierarchyData } from '../src/types';
+import type { HierarchyData, HierarchyNode } from '../src/types';
 
 describe('Advanced Tests', () => {
   describe('Boundary Cases', () => {
@@ -68,12 +68,12 @@ describe('Advanced Tests', () => {
       };
 
       const result = compactBox(tree);
-      const checkNodes = (node: any) => {
+      const checkNodes = (node: HierarchyNode) => {
         expect(typeof node.x).toBe('number');
         expect(typeof node.y).toBe('number');
         expect(isFinite(node.x)).toBe(true);
         expect(isFinite(node.y)).toBe(true);
-        node.children?.forEach((child: any) => checkNodes(child));
+        node.children?.forEach((child: HierarchyNode) => checkNodes(child));
       };
 
       checkNodes(result);
@@ -199,11 +199,11 @@ describe('Advanced Tests', () => {
       };
 
       const result = compactBox(tree);
-      expect((result.data as any).label).toBe('Root Node');
-      expect((result.data as any).color).toBe('red');
+      expect((result.data).label).toBe('Root Node');
+      expect((result.data).color).toBe('red');
       if (result.children?.length) {
-        expect((result.children[0].data as any).label).toBe('Node A');
-        expect((result.children[0].data as any).value).toBe(100);
+        expect((result.children[0].data).label).toBe('Node A');
+        expect((result.children[0].data).value).toBe(100);
       }
     });
   });
@@ -419,7 +419,7 @@ describe('Advanced Tests', () => {
         ],
       };
 
-      const result = indented(tree, { align: true });
+      const result = indented(tree, { align: 'center' });
       expect(result).toBeDefined();
     });
   });
@@ -664,7 +664,7 @@ describe('Advanced Tests', () => {
       const result = compactBox(tree);
       expect(result).toBeDefined();
 
-      const checkNode = (node: any) => {
+      const checkNode = (node: HierarchyNode) => {
         expect(typeof node.x).toBe('number');
         expect(typeof node.y).toBe('number');
         expect(isFinite(node.x)).toBe(true);
