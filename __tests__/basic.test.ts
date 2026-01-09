@@ -337,7 +337,7 @@ describe('Advanced Tests', () => {
       };
 
       const algorithms = { compactBox, dendrogram, indented, mindmap };
-      Object.entries(algorithms).forEach(([name, algo]) => {
+      Object.entries(algorithms).forEach(([_name, algo]) => {
         const result = algo(tree);
         expect(result).toBeDefined();
         expect(result.data).toBeDefined();
